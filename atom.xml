@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-01-07T04:24:14.560Z</updated>
+  <updated>2019-01-07T11:54:38.164Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,19 +17,43 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>第一次更新完成</title>
-    <link href="http://yoursite.com/2019/01/06/My-blog-2-0/"/>
-    <id>http://yoursite.com/2019/01/06/My-blog-2-0/</id>
-    <published>2019-01-06T13:27:34.000Z</published>
-    <updated>2019-01-07T04:24:14.560Z</updated>
+    <title>bug大清理，第二次更新</title>
+    <link href="http://yoursite.com/2019/01/07/bug-clean/"/>
+    <id>http://yoursite.com/2019/01/07/bug-clean/</id>
+    <published>2019-01-07T11:33:33.000Z</published>
+    <updated>2019-01-07T11:54:38.164Z</updated>
     
-    <content type="html"><![CDATA[<p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=25706282&auto=0&height=66"></iframe><br>又捣鼓了一天，终于，把评论功能弄起来了。（此处应有掌声）<br>评论功能由无后台的Valine评论系统与leancloud云共同完成<br>还顺带装上了网易云的音乐插件和访客统计功能<br>换了个更简洁的主题<br>欢迎吐槽，收藏（话说我是不是该搞个点赞功能）</p>]]></content>
+    <content type="html"><![CDATA[<p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=496869422&auto=0&height=66"></iframe><br>经过了一天的测试，发现了不少的bug<br>评论被吃，加载出错…<br>有些是因为兼容性的原因，有些是因为云没有弄好<br>这次，小伙伴们被吃掉的评论可以看到了！</p><p>我也又加了许多功能（￣︶￣）↗　</p><p>1.实现fork me on github<br>2.实现点击出现桃心效果<br>3.侧边栏社交小图标<br>4.主页文章添加阴影效果<br>5.在网站底部加上访问量(不同于文章访问量)<br>6.添加“DaoVoice 在线联系“在右下角（测试，你可以联系我让我知道这个东西工不工作）<br>7.为博客加上萌萌的看板娘（欢迎调戏）<br>8.打赏功能（测试）<br>9.添加背景</p>]]></content>
     
     <summary type="html">
     
       
       
         &lt;p&gt;&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;//music.163.com/outchain/player?type=2&amp;
+      
+    
+    </summary>
+    
+    
+      <category term="你好" scheme="http://yoursite.com/tags/%E4%BD%A0%E5%A5%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第一次更新完成</title>
+    <link href="http://yoursite.com/2019/01/06/My-blog-2-0/"/>
+    <id>http://yoursite.com/2019/01/06/My-blog-2-0/</id>
+    <published>2019-01-06T13:27:34.000Z</published>
+    <updated>2019-01-07T11:31:33.587Z</updated>
+    
+    <content type="html"><![CDATA[<p>又捣鼓了一天，终于，把评论功能弄起来了。（此处应有掌声）<br>评论功能由无后台的Valine评论系统与leancloud云共同完成<br>还顺带装上了网易云的音乐插件和访客统计功能<br>换了个更简洁的主题<br>欢迎吐槽，收藏（话说我是不是该搞个点赞功能）</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;又捣鼓了一天，终于，把评论功能弄起来了。（此处应有掌声）&lt;br&gt;评论功能由无后台的Valine评论系统与leancloud云共同完成&lt;br&gt;还顺带装上了网易云的音乐插件和访客统计功能&lt;br&gt;换了个更简洁的主题&lt;br&gt;欢迎吐槽，收藏（话说我是不是该搞个点赞功能）&lt;/p&gt;
+
       
     
     </summary>
@@ -59,27 +83,6 @@
     
     
       <category term="你好" scheme="http://yoursite.com/tags/%E4%BD%A0%E5%A5%BD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2019/01/05/hello-world/"/>
-    <id>http://yoursite.com/2019/01/05/hello-world/</id>
-    <published>2019-01-05T08:33:03.676Z</published>
-    <updated>2019-01-05T08:33:03.676Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
-    
-    </summary>
-    
     
   </entry>
   
