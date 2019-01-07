@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Wbq&#39;s Blog</title>
+  
+  <subtitle>Hello World</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2019-01-07T04:24:14.560Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>wbq</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>第一次更新完成</title>
+    <link href="http://yoursite.com/2019/01/06/My-blog-2-0/"/>
+    <id>http://yoursite.com/2019/01/06/My-blog-2-0/</id>
+    <published>2019-01-06T13:27:34.000Z</published>
+    <updated>2019-01-07T04:24:14.560Z</updated>
+    
+    <content type="html"><![CDATA[<p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=25706282&auto=0&height=66"></iframe><br>又捣鼓了一天，终于，把评论功能弄起来了。（此处应有掌声）<br>评论功能由无后台的Valine评论系统与leancloud云共同完成<br>还顺带装上了网易云的音乐插件和访客统计功能<br>换了个更简洁的主题<br>欢迎吐槽，收藏（话说我是不是该搞个点赞功能）</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;//music.163.com/outchain/player?type=2&amp;
+      
+    
+    </summary>
+    
+    
+      <category term="你好" scheme="http://yoursite.com/tags/%E4%BD%A0%E5%A5%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>world</title>
+    <link href="http://yoursite.com/2019/01/05/world/"/>
+    <id>http://yoursite.com/2019/01/05/world/</id>
+    <published>2019-01-05T11:20:58.000Z</published>
+    <updated>2019-01-05T12:09:12.998Z</updated>
+    
+    <content type="html"><![CDATA[<p> 欢迎你访问我的博客<br> 忙了一整天，终于把这个博客整出来了（感谢SomeQ的指导）<br> 这个博客是通过hexo框架部署在GitHub上的，以后将会实现更多功能。<br> 也算是在互联网有了真正属于自己的一个小天地吧（￣︶￣）↗　<br> 希望大家以后常来看看；我将在这里更新很多有趣的事情的<br> 主要是围绕着游戏开发的一些想法和游戏开发日志什么的<br> Hello World！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt; 欢迎你访问我的博客&lt;br&gt; 忙了一整天，终于把这个博客整出来了（感谢SomeQ的指导）&lt;br&gt; 这个博客是通过hexo框架部署在GitHub上的，以后将会实现更多功能。&lt;br&gt; 也算是在互联网有了真正属于自己的一个小天地吧（￣︶￣）↗　&lt;br&gt; 希望大家以后常来看看；我将
+      
+    
+    </summary>
+    
+    
+      <category term="你好" scheme="http://yoursite.com/tags/%E4%BD%A0%E5%A5%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2019/01/05/hello-world/"/>
+    <id>http://yoursite.com/2019/01/05/hello-world/</id>
+    <published>2019-01-05T08:33:03.676Z</published>
+    <updated>2019-01-05T08:33:03.676Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
