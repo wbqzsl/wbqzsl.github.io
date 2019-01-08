@@ -1940,7 +1940,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #a4999a;
+  background: #550fff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2825,7 +2825,7 @@ hr {
   -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
 }
 body {
-  background: url("/images/5.png");
+  background: url("/images/8.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 50% 50%;
