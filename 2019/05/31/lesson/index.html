@@ -140,9 +140,15 @@
 <meta property="og:image" content="http://wbqzsl.github.io/2019/05/31/lesson/616.png">
 <meta property="og:image" content="http://wbqzsl.github.io/2019/05/31/lesson/617.png">
 <meta property="og:image" content="http://wbqzsl.github.io/2019/05/31/lesson/618.png">
-<meta property="og:image" content="http://wbqzsl.github.io/2019/05/31/lesson/618.png">
+<meta property="og:image" content="http://wbqzsl.github.io/2019/05/31/lesson/619.png">
 <meta property="og:image" content="http://wbqzsl.github.io/2019/05/31/lesson/320.png">
-<meta property="og:updated_time" content="2019-06-01T06:14:25.514Z">
+<meta property="og:image" content="http://wbqzsl.github.io/2019/05/31/lesson/718.png">
+<meta property="og:image" content="http://wbqzsl.github.io/2019/05/31/lesson/191.png">
+<meta property="og:image" content="http://wbqzsl.github.io/2019/05/31/lesson/c4.png">
+<meta property="og:image" content="http://wbqzsl.github.io/2019/05/31/lesson/c5.png">
+<meta property="og:image" content="http://wbqzsl.github.io/2019/05/31/lesson/b4.png">
+<meta property="og:image" content="http://wbqzsl.github.io/2019/05/31/lesson/b5.png">
+<meta property="og:updated_time" content="2019-07-18T12:01:47.166Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何使用Hexo+Github搭建起属于你的博客">
 <meta name="twitter:description" content="就是本博客的搭建教程/笑">
@@ -506,10 +512,34 @@
 <h3 id="博客写作"><a href="#博客写作" class="headerlink" title="博客写作"></a>博客写作</h3><p>经过了上面的操作，你已经可以从你的电脑上部署到博客文章了</p>
 <h4 id="新建博客"><a href="#新建博客" class="headerlink" title="新建博客"></a>新建博客</h4><p>在你博客根目录里右键<br>git bash here<br>输入<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span>  <span class="string">"这是题目最好不要中文"</span></span><br></pre></td></tr></table></figure><br>那么在你的博客根目录的Source文件夹里，就会新建一个名字.md的文件<br><strong>（建议修改_config.yml配置文件post_asset_folder项为true。这会在你新建博客的时候新建一个同名文件夹，写博客需要的资源可以放进去）</strong></p>
 <p>打开 文章名.md即可开始写作</p>
-<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><p>在vs里，文件-&gt;高级保存选项<br><img src="/2019/05/31/lesson/618.png" alt=""><br>调成这样，不然中文显示乱码</p>
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><p>在vs里，文件-&gt;高级保存选项<br><img src="/2019/05/31/lesson/619.png" alt=""><br>调成这样，不然中文显示乱码</p>
 <p>文章格式<br><img src="/2019/05/31/lesson/320.png" alt=""></p>
 <h4 id="生成并部署博客"><a href="#生成并部署博客" class="headerlink" title="生成并部署博客"></a>生成并部署博客</h4><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">hexo g</span></span><br><span class="line"><span class="attribute">hexo d</span></span><br></pre></td></tr></table></figure>
-<p>耐心等待上传完成<br>访问 <a href="https://yourname.github.io" target="_blank" rel="noopener">https://yourname.github.io</a> 即可看到你写的博文<br>————————————<br>2019.6.1  13:52<br>现在相当于在互联网上有你的网站了<br>快去试试吧<br>下次更如何更换主题与美化博客</p>
+<p>耐心等待上传完成<br>访问 <a href="https://yourname.github.io" target="_blank" rel="noopener">https://yourname.github.io</a> 即可看到你写的博文<br>————————————<br>2019.6.1  13:52<br>现在相当于在互联网上有你的网站了<br>快去试试吧<br>下次更如何更换主题与美化博客<br>————————————<br>2019.7.18 18:43<br>接下来说如何美化你的博客</p>
+<h3 id="美化博客"><a href="#美化博客" class="headerlink" title="美化博客"></a>美化博客</h3><h4 id="主题选择"><a href="#主题选择" class="headerlink" title="主题选择"></a>主题选择</h4><p>从这个网址选择你的主题<br>建议选择Next主题，比较稳定，功能也很多</p>
+<p><a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a></p>
+<h4 id="主题安装"><a href="#主题安装" class="headerlink" title="主题安装"></a>主题安装</h4><p>然后下载该主题的Zip压缩包</p>
+<p>解压后的文件夹放在博客文件夹的themes文件夹里</p>
+<p>然后在博客文件夹的_config.yml文件中修改</p>
+<p>如图</p>
+<p><img src="/2019/05/31/lesson/718.png" alt=""></p>
+<p><strong>(注意：你可以将主题文件夹重命名，如果它太长的话。只要你配置的与文件夹匹配，就不会有问题。)</strong><br><strong>(提示：在你下载并安装好主题后，可以先本地生成看一下，方便选择)</strong></p>
+<h4 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h4><p>这里不同主题就不太一样了。我用的是Next主题，不过大多数主题配置都差不多。</p>
+<p>无非就是插件和脚本的安装和开关</p>
+<p>参考以下网站</p>
+<p><a href="http://shenzekun.cn/hexo%E7%9A%84next%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B.html" target="_blank" rel="noopener">hexo的next主题个性化配置教程</a><br><a href="https://blog.csdn.net/sunshine940326/article/details/69933696" target="_blank" rel="noopener">hexo+next主题优化</a><br><a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener">NexT 使用文档</a><br>这里主要说一下</p>
+<ul>
+<li>评论功能</li>
+<li>live 2d </li>
+<li>后续更新</li>
+</ul>
+<h5 id="评论功能"><a href="#评论功能" class="headerlink" title="评论功能"></a>评论功能</h5><p>现在用的多的是基于leancloud云的valine评论插件<br>就是我现在博客用的这个<br>首先<strong>在主题的配置文件_config.yml</strong>中找到Valine</p>
+<p>如图</p>
+<p><img src="/2019/05/31/lesson/191.png" alt=""><br>首先enable改成True</p>
+<p>然后我们需要在leancloud注册一个帐号</p>
+<p><a href="https://leancloud.cn/" target="_blank" rel="noopener">leancloud官网</a></p>
+<p>登录后点击页面右上角的控制台，进去后点击创建应用，应用名称随便填(如valine)并创建，<br>之后将鼠标移到应用标签上并点击设置按钮<br>如图<br><img src="/2019/05/31/lesson/c4.png" alt=""><br>把APPID和KEY粘贴到下图对应位置<br><img src="/2019/05/31/lesson/c5.png" alt=""></p>
+<p>然后打开设置 安全中心<br>如图<br><img src="/2019/05/31/lesson/b4.png" alt=""><br><img src="/2019/05/31/lesson/b5.png" alt=""><br>添加你的域名<br>现在应该是 你的名字.github.io<br><strong>以后买了域名记得回来添加</strong><br>如果不出意外的话，这些都完成后等个15分种<br>你部署一下评论就可以正常工作了<br>————————————<br>2019.7.18 20:01</p>
 
       
     </div>
@@ -732,7 +762,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Github-Pages"><span class="nav-number">1.</span> <span class="nav-text">Github Pages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开始"><span class="nav-number">2.</span> <span class="nav-text">开始</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#本地环境配置"><span class="nav-number">2.1.</span> <span class="nav-text">本地环境配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#环境检查"><span class="nav-number">2.2.</span> <span class="nav-text">环境检查</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Github帐号注册与Github-Pages申请"><span class="nav-number">3.</span> <span class="nav-text">Github帐号注册与Github Pages申请</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Github帐号注册"><span class="nav-number">3.1.</span> <span class="nav-text">Github帐号注册</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Github-Pages申请"><span class="nav-number">3.2.</span> <span class="nav-text">Github Pages申请</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置成功"><span class="nav-number">3.3.</span> <span class="nav-text">配置成功</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo配置"><span class="nav-number">4.</span> <span class="nav-text">hexo配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#本地配置"><span class="nav-number">4.1.</span> <span class="nav-text">本地配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置成功-1"><span class="nav-number">4.2.</span> <span class="nav-text">配置成功</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搭建到Github-page上"><span class="nav-number">5.</span> <span class="nav-text">搭建到Github page上</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#博客信息填写"><span class="nav-number">5.1.</span> <span class="nav-text">博客信息填写</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#密钥配置"><span class="nav-number">5.2.</span> <span class="nav-text">密钥配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#部署测试"><span class="nav-number">5.3.</span> <span class="nav-text">部署测试</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#博客写作"><span class="nav-number">6.</span> <span class="nav-text">博客写作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#新建博客"><span class="nav-number">6.1.</span> <span class="nav-text">新建博客</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注意"><span class="nav-number">6.2.</span> <span class="nav-text">注意</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生成并部署博客"><span class="nav-number">6.3.</span> <span class="nav-text">生成并部署博客</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Github-Pages"><span class="nav-number">1.</span> <span class="nav-text">Github Pages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开始"><span class="nav-number">2.</span> <span class="nav-text">开始</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#本地环境配置"><span class="nav-number">2.1.</span> <span class="nav-text">本地环境配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#环境检查"><span class="nav-number">2.2.</span> <span class="nav-text">环境检查</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Github帐号注册与Github-Pages申请"><span class="nav-number">3.</span> <span class="nav-text">Github帐号注册与Github Pages申请</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Github帐号注册"><span class="nav-number">3.1.</span> <span class="nav-text">Github帐号注册</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Github-Pages申请"><span class="nav-number">3.2.</span> <span class="nav-text">Github Pages申请</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置成功"><span class="nav-number">3.3.</span> <span class="nav-text">配置成功</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo配置"><span class="nav-number">4.</span> <span class="nav-text">hexo配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#本地配置"><span class="nav-number">4.1.</span> <span class="nav-text">本地配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置成功-1"><span class="nav-number">4.2.</span> <span class="nav-text">配置成功</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搭建到Github-page上"><span class="nav-number">5.</span> <span class="nav-text">搭建到Github page上</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#博客信息填写"><span class="nav-number">5.1.</span> <span class="nav-text">博客信息填写</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#密钥配置"><span class="nav-number">5.2.</span> <span class="nav-text">密钥配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#部署测试"><span class="nav-number">5.3.</span> <span class="nav-text">部署测试</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#博客写作"><span class="nav-number">6.</span> <span class="nav-text">博客写作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#新建博客"><span class="nav-number">6.1.</span> <span class="nav-text">新建博客</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注意"><span class="nav-number">6.2.</span> <span class="nav-text">注意</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生成并部署博客"><span class="nav-number">6.3.</span> <span class="nav-text">生成并部署博客</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#美化博客"><span class="nav-number">7.</span> <span class="nav-text">美化博客</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#主题选择"><span class="nav-number">7.1.</span> <span class="nav-text">主题选择</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#主题安装"><span class="nav-number">7.2.</span> <span class="nav-text">主题安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#主题配置"><span class="nav-number">7.3.</span> <span class="nav-text">主题配置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#评论功能"><span class="nav-number">7.3.1.</span> <span class="nav-text">评论功能</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -789,7 +819,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共3.1k字</span>
+  <span class="post-count">博客全站共3.6k字</span>
 </div>
 
         
