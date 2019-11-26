@@ -131,7 +131,16 @@
 <meta property="og:image" content="http://wbqzsl.github.io/2019/11/19/study/恰饭.png">
 <meta property="og:image" content="http://wbqzsl.github.io/2019/11/19/study/2.png">
 <meta property="og:image" content="http://wbqzsl.github.io/2019/11/19/study/3.png">
-<meta property="og:updated_time" content="2019-11-26T04:05:22.571Z">
+<meta property="og:image" content="http://wbqzsl.github.io/2019/11/19/study/4.png">
+<meta property="og:image" content="http://wbqzsl.github.io/2019/11/19/study/5.png">
+<meta property="og:image" content="http://wbqzsl.github.io/2019/11/19/study/7.png">
+<meta property="og:image" content="http://wbqzsl.github.io/2019/11/19/study/6.png">
+<meta property="og:image" content="http://wbqzsl.github.io/2019/11/19/study/29.jpg">
+<meta property="og:image" content="http://wbqzsl.github.io/2019/11/19/study/8.png">
+<meta property="og:image" content="http://wbqzsl.github.io/2019/11/19/study/9.png">
+<meta property="og:image" content="http://wbqzsl.github.io/2019/11/19/study/10.png">
+<meta property="og:image" content="http://wbqzsl.github.io/2019/11/19/study/11.png">
+<meta property="og:updated_time" content="2019-11-26T10:05:34.129Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习日志">
 <meta name="twitter:description" content="空余时间自己学的一些东西，记录一下。 目前有Mysql，前端，和云服务器管理">
@@ -534,7 +543,75 @@
 <p>这里，我用的是全世界应用最多的Web服务器软件之一 ——<strong>apache</strong></p>
 <p><img src="/2019/11/19/study/3.png" alt=""></p>
 <p>软件选好后，那我们就万事具备了。</p>
-<h3 id="各种安装"><a href="#各种安装" class="headerlink" title="各种安装"></a>各种安装</h3><p>————分割线——–20191126</p>
+<h3 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h3><p>我们可以用终端访问云服务器</p>
+<p>腾讯云有自带的控制台终端</p>
+<p><img src="/2019/11/19/study/4.png" alt=""></p>
+<p><img src="/2019/11/19/study/5.png" alt=""></p>
+<p><strong>注意，你的服务器的初始用户的名称和密码以及公网IP都将通过腾讯云站内信的形式告诉你</strong></p>
+<p>觉得初始密码麻烦可以登上去改一下</p>
+<p>指令是<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ passwd</span><br><span class="line">Changing password <span class="keyword">for</span> abhishek.</span><br><span class="line">(current) UNIX <span class="string">password:</span> --现在的密码</span><br><span class="line">Enter <span class="keyword">new</span> UNIX <span class="string">password:</span> --（要设置的）新密码</span><br><span class="line">Retype <span class="keyword">new</span> UNIX <span class="string">password:</span> --重新输一遍新密码</span><br><span class="line"><span class="string">passwd:</span> password updated successfully</span><br></pre></td></tr></table></figure></p>
+<p><strong>在键入密码时，你不会从屏幕上看到任何东西。这在 UNIX 和 Linux 系统中是非常正常的表现。</strong></p>
+<p>我们也可以用Xshell软件来登陆，因为我们后期要传文件，所以还是装上Xshell吧</p>
+<p>装上后直接新建一个会话，主机就写你的公网IP，端口一般都是22（你要是不改的话）</p>
+<p><img src="/2019/11/19/study/7.png" alt=""></p>
+<p>然后确认，链接，就会让弹出窗口让你输入用户名和密码</p>
+<p>连接上就行了</p>
+<p>为了方便，我们直接切换到<strong>root用户</strong>进行操作</p>
+<p>（云服务器刚开始给你的是普通用户）</p>
+<p>很显然你之前没有设置root用户</p>
+<p>那么</p>
+<p>sudo passwd root</p>
+<p>输入你现在这个普通用户的密码</p>
+<p>下面会提示你输入新的密码,请注意这个就是你的root密码,请输入两次一样的密码,然后会提示你password updated successfully</p>
+<p>然后输入 su root</p>
+<p>就可以通过root访问了</p>
+<h3 id="各种安装"><a href="#各种安装" class="headerlink" title="各种安装"></a>各种安装</h3><p>我们直接快速安装apache</p>
+<p>sudo apt-get install httpd</p>
+<p>会出现一系列的服务器软件，其中就有我们的apache</p>
+<p>sudo apt-get install apache2<br>sudo apt-get install apache2-dev</p>
+<p>一路y,等读条完后</p>
+<p>sudo systemctl status apache2</p>
+<p>检查是否安装成功</p>
+<p><img src="/2019/11/19/study/6.png" alt=""></p>
+<p>跟上图一样的话，恭喜你，apache成功安装了。</p>
+<p>这时候，我们可以</p>
+<p>curl 127.0.0.1</p>
+<p>就会接收到一堆html的代码</p>
+<p>这就是初始欢迎页面的html代码</p>
+<p><img src="/2019/11/19/study/29.jpg" alt=""></p>
+<p>当然，如果我们有图形界面的话，在图形界面的浏览器输入这个127.0.0.1就会看到页面的样子了</p>
+<p><img src="/2019/11/19/study/8.png" alt=""></p>
+<p><strong>满足你们的好奇心</strong></p>
+<h3 id="上传网页"><a href="#上传网页" class="headerlink" title="上传网页"></a>上传网页</h3><p>软件安好了</p>
+<p>/var/www/html</p>
+<p>是apache的默认发布路径</p>
+<p>所以我们只需要上传我们的项目到这个文件夹就可以了</p>
+<p>这里拿我的项目举例</p>
+<p><img src="/2019/11/19/study/9.png" alt=""></p>
+<p>我们把这个目录原封不动的搬运到/var/www/html目录下就行了</p>
+<p>怎么运呢，<strong>rz</strong>指令</p>
+<p>先安装一下</p>
+<p>apt-get install lrzsz</p>
+<p>我们输入rz</p>
+<p>就会出现<br><img src="/2019/11/19/study/10.png" alt=""><br>选中传就行</p>
+<p><strong>注意，遇到文件夹时，要先在/var/www/html新建一个。</strong><br>指令：<br><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> 你的文件夹名称</span><br></pre></td></tr></table></figure></p>
+<p>然后再cd进去传。传完了别忘了再cd ..出来**</p>
+<p><strong>传错的话</strong><br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">rm</span> 文件名</span><br><span class="line"><span class="keyword">rm</span> -rf 文件夹</span><br></pre></td></tr></table></figure></p>
+<p>接下来，不出意外的话———–你还是访问不了你的网页</p>
+<p>为什么呢？</p>
+<p>因为安全组</p>
+<h3 id="安全组"><a href="#安全组" class="headerlink" title="安全组"></a>安全组</h3><p>这个东西是云服务器都有的<br>限制访问IP和端口以提高安全性</p>
+<p><img src="/2019/11/19/study/11.png" alt=""></p>
+<p>你可以按照腾讯云的提示做<br><a href="https://cloud.tencent.com/document/product/213/12452" target="_blank" rel="noopener">安全组帮助文档</a></p>
+<p>也可以跟我一样，放开所有端口就完了</p>
+<p>设置完保存后，在浏览器输入http://你的公网IP，就可以看到你的网页内容了！</p>
+<p><strong>注意，好像不支持https访问，所以要用http。而很多浏览器可能默认https，所以你得手动输入</strong></p>
+<h3 id="成功"><a href="#成功" class="headerlink" title="成功"></a>成功</h3><p>都完成后，就可以访问你的网页啦！</p>
+<p><strong>注意！</strong><br><strong>注意！</strong><br><strong>注意！</strong></p>
+<p>为了规范互联网信息服务活动，促进互联网信息服务健康有序发展，<br>根据国务院令第 292 号《互联网信息服务管理办法》和工信部令第 33 号《非经营性互联网信息服务备案管理办法》规定，<br>国家对经营性互联网信息服务实行许可制度，对非经营性互联网信息服务实行备案制度。<br>未取得许可或者未履行备案手续的，不得从事互联网信息服务，否则就属于违法行为。</p>
+<p>所以，完成这些后一定要先备案呀！</p>
+<p>而且没那么麻烦<br>现在方便很多了</p>
+<p><a href="https://cloud.tencent.com/document/product/213/12452" target="_blank" rel="noopener">腾讯云备案链接</a></p>
 
       
     </div>
@@ -757,7 +834,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于MySQL"><span class="nav-number">1.</span> <span class="nav-text">关于MySQL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#列出"><span class="nav-number">1.1.</span> <span class="nav-text">列出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建数据库"><span class="nav-number">1.2.</span> <span class="nav-text">创建数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除数据库"><span class="nav-number">1.3.</span> <span class="nav-text">删除数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用数据库"><span class="nav-number">1.4.</span> <span class="nav-text">使用数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查询正在使用的数据库名"><span class="nav-number">1.4.1.</span> <span class="nav-text">查询正在使用的数据库名</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改数据库"><span class="nav-number">1.5.</span> <span class="nav-text">修改数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#修改数据库的名称"><span class="nav-number">1.5.1.</span> <span class="nav-text">修改数据库的名称</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改数据库的字符集"><span class="nav-number">1.5.2.</span> <span class="nav-text">修改数据库的字符集</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建新表"><span class="nav-number">1.6.</span> <span class="nav-text">创建新表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#根据已有的表创建新表："><span class="nav-number">1.6.1.</span> <span class="nav-text">根据已有的表创建新表：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询表"><span class="nav-number">1.7.</span> <span class="nav-text">查询表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除表"><span class="nav-number">1.8.</span> <span class="nav-text">删除表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改表"><span class="nav-number">1.9.</span> <span class="nav-text">修改表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#修改表名"><span class="nav-number">1.9.1.</span> <span class="nav-text">修改表名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改字符集名称"><span class="nav-number">1.9.2.</span> <span class="nav-text">修改字符集名称</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#增加列"><span class="nav-number">1.9.3.</span> <span class="nav-text">增加列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#增加列-1"><span class="nav-number">1.9.4.</span> <span class="nav-text">增加列</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加主键"><span class="nav-number">1.10.</span> <span class="nav-text">添加主键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除主键"><span class="nav-number">1.11.</span> <span class="nav-text">删除主键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本查询"><span class="nav-number">1.12.</span> <span class="nav-text">基本查询</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#聚合函数"><span class="nav-number">1.12.1.</span> <span class="nav-text">聚合函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分组查询"><span class="nav-number">1.13.</span> <span class="nav-text">分组查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分页查询"><span class="nav-number">1.14.</span> <span class="nav-text">分页查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运算符"><span class="nav-number">1.15.</span> <span class="nav-text">运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#between的用法"><span class="nav-number">1.15.1.</span> <span class="nav-text">between的用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#in-的使用方法"><span class="nav-number">1.15.2.</span> <span class="nav-text">in 的使用方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于前端"><span class="nav-number">2.</span> <span class="nav-text">关于前端</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#html基本框架"><span class="nav-number">2.1.</span> <span class="nav-text">html基本框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类"><span class="nav-number">2.2.</span> <span class="nav-text">类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css"><span class="nav-number">2.3.</span> <span class="nav-text">css</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文本表示"><span class="nav-number">2.4.</span> <span class="nav-text">文本表示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片表示"><span class="nav-number">2.5.</span> <span class="nav-text">图片表示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ul-li列表"><span class="nav-number">2.6.</span> <span class="nav-text">ul li列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#js"><span class="nav-number">2.7.</span> <span class="nav-text">js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#成品"><span class="nav-number">2.8.</span> <span class="nav-text">成品</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于云服务器"><span class="nav-number">3.</span> <span class="nav-text">关于云服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#购买"><span class="nav-number">3.1.</span> <span class="nav-text">购买</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开始"><span class="nav-number">3.2.</span> <span class="nav-text">开始</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#各种安装"><span class="nav-number">3.3.</span> <span class="nav-text">各种安装</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于MySQL"><span class="nav-number">1.</span> <span class="nav-text">关于MySQL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#列出"><span class="nav-number">1.1.</span> <span class="nav-text">列出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建数据库"><span class="nav-number">1.2.</span> <span class="nav-text">创建数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除数据库"><span class="nav-number">1.3.</span> <span class="nav-text">删除数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用数据库"><span class="nav-number">1.4.</span> <span class="nav-text">使用数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查询正在使用的数据库名"><span class="nav-number">1.4.1.</span> <span class="nav-text">查询正在使用的数据库名</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改数据库"><span class="nav-number">1.5.</span> <span class="nav-text">修改数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#修改数据库的名称"><span class="nav-number">1.5.1.</span> <span class="nav-text">修改数据库的名称</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改数据库的字符集"><span class="nav-number">1.5.2.</span> <span class="nav-text">修改数据库的字符集</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建新表"><span class="nav-number">1.6.</span> <span class="nav-text">创建新表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#根据已有的表创建新表："><span class="nav-number">1.6.1.</span> <span class="nav-text">根据已有的表创建新表：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询表"><span class="nav-number">1.7.</span> <span class="nav-text">查询表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除表"><span class="nav-number">1.8.</span> <span class="nav-text">删除表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改表"><span class="nav-number">1.9.</span> <span class="nav-text">修改表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#修改表名"><span class="nav-number">1.9.1.</span> <span class="nav-text">修改表名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改字符集名称"><span class="nav-number">1.9.2.</span> <span class="nav-text">修改字符集名称</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#增加列"><span class="nav-number">1.9.3.</span> <span class="nav-text">增加列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#增加列-1"><span class="nav-number">1.9.4.</span> <span class="nav-text">增加列</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加主键"><span class="nav-number">1.10.</span> <span class="nav-text">添加主键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除主键"><span class="nav-number">1.11.</span> <span class="nav-text">删除主键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本查询"><span class="nav-number">1.12.</span> <span class="nav-text">基本查询</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#聚合函数"><span class="nav-number">1.12.1.</span> <span class="nav-text">聚合函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分组查询"><span class="nav-number">1.13.</span> <span class="nav-text">分组查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分页查询"><span class="nav-number">1.14.</span> <span class="nav-text">分页查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运算符"><span class="nav-number">1.15.</span> <span class="nav-text">运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#between的用法"><span class="nav-number">1.15.1.</span> <span class="nav-text">between的用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#in-的使用方法"><span class="nav-number">1.15.2.</span> <span class="nav-text">in 的使用方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于前端"><span class="nav-number">2.</span> <span class="nav-text">关于前端</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#html基本框架"><span class="nav-number">2.1.</span> <span class="nav-text">html基本框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类"><span class="nav-number">2.2.</span> <span class="nav-text">类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css"><span class="nav-number">2.3.</span> <span class="nav-text">css</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文本表示"><span class="nav-number">2.4.</span> <span class="nav-text">文本表示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片表示"><span class="nav-number">2.5.</span> <span class="nav-text">图片表示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ul-li列表"><span class="nav-number">2.6.</span> <span class="nav-text">ul li列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#js"><span class="nav-number">2.7.</span> <span class="nav-text">js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#成品"><span class="nav-number">2.8.</span> <span class="nav-text">成品</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于云服务器"><span class="nav-number">3.</span> <span class="nav-text">关于云服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#购买"><span class="nav-number">3.1.</span> <span class="nav-text">购买</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开始"><span class="nav-number">3.2.</span> <span class="nav-text">开始</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#登录"><span class="nav-number">3.3.</span> <span class="nav-text">登录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#各种安装"><span class="nav-number">3.4.</span> <span class="nav-text">各种安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上传网页"><span class="nav-number">3.5.</span> <span class="nav-text">上传网页</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安全组"><span class="nav-number">3.6.</span> <span class="nav-text">安全组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#成功"><span class="nav-number">3.7.</span> <span class="nav-text">成功</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -814,7 +891,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共5.5k字</span>
+  <span class="post-count">博客全站共6.5k字</span>
 </div>
 
         
