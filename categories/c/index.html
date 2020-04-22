@@ -148,24 +148,19 @@
 
 
   
-  <meta name="keywords" content="数据库,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
-<meta name="description" content="原理分析数据库操作的时间通常由存取磁盘的时间和CPU计算时间这两部分构成，而CPU的速度非常快，所以数据库的操作效率取决于访问磁盘的次数。我们在数据库中的数据一般是放在磁盘中的，读取数据的时候，磁盘中有两个机械运动的部分，分别是盘片旋转和磁臂移动。盘片旋转就是我们市面上所提到的多少转每分钟，而磁盘移动则是在盘片旋转到指定位置以后，移动磁臂后开始进行数据的读写。那么这就存在一个定位到磁盘中的块的过程">
-<meta name="keywords" content="数据库">
-<meta property="og:type" content="article">
-<meta property="og:title" content="数据库的储存数据结构为什么是B+树">
-<meta property="og:url" content="http://wbqzsl.github.io/2020/02/12/study2020422/index.html">
+<meta name="description" content="Game developer">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Wbq&#39;s Blog">
+<meta property="og:url" content="http://wbqzsl.github.io/categories/c/index.html">
 <meta property="og:site_name" content="Wbq&#39;s Blog">
-<meta property="og:description" content="原理分析数据库操作的时间通常由存取磁盘的时间和CPU计算时间这两部分构成，而CPU的速度非常快，所以数据库的操作效率取决于访问磁盘的次数。我们在数据库中的数据一般是放在磁盘中的，读取数据的时候，磁盘中有两个机械运动的部分，分别是盘片旋转和磁臂移动。盘片旋转就是我们市面上所提到的多少转每分钟，而磁盘移动则是在盘片旋转到指定位置以后，移动磁臂后开始进行数据的读写。那么这就存在一个定位到磁盘中的块的过程">
+<meta property="og:description" content="Game developer">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://wbqzsl.github.io/2020/02/12/study2020422/1.png">
-<meta property="og:image" content="http://wbqzsl.github.io/2020/02/12/study2020422/2.png">
-<meta property="og:updated_time" content="2020-04-22T10:59:05.800Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据库的储存数据结构为什么是B+树">
-<meta name="twitter:description" content="原理分析数据库操作的时间通常由存取磁盘的时间和CPU计算时间这两部分构成，而CPU的速度非常快，所以数据库的操作效率取决于访问磁盘的次数。我们在数据库中的数据一般是放在磁盘中的，读取数据的时候，磁盘中有两个机械运动的部分，分别是盘片旋转和磁臂移动。盘片旋转就是我们市面上所提到的多少转每分钟，而磁盘移动则是在盘片旋转到指定位置以后，移动磁臂后开始进行数据的读写。那么这就存在一个定位到磁盘中的块的过程">
-<meta name="twitter:image" content="http://wbqzsl.github.io/2020/02/12/study2020422/1.png">
+<meta name="twitter:title" content="Wbq&#39;s Blog">
+<meta name="twitter:description" content="Game developer">
 
 
 
@@ -174,7 +169,7 @@
 
 
 
-  <link rel="canonical" href="http://wbqzsl.github.io/2020/02/12/study2020422/">
+  <link rel="canonical" href="http://wbqzsl.github.io/categories/c/">
 
 
 
@@ -183,7 +178,7 @@
     sidebar: "",
   };
 </script>
-  <title>数据库的储存数据结构为什么是B+树 | Wbq's Blog</title>
+  <title>分类: c++ | Wbq's Blog</title>
   
 
 
@@ -230,7 +225,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left ">
     <div class="headband"></div>
     <a href="https://github.com/wbqzsl?tab=repositories" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 
@@ -339,235 +334,57 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
+  
+  
+  
+  <div class="post-block category">
 
-  
+    <div id="posts" class="posts-collapse">
+      <div class="collection-title">
+        <h1>c++<small>分类</small>
+        </h1>
+      </div>
 
-  
-  
-  
-
-  
+      
+        
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wbqzsl.github.io/2020/02/12/study2020422/">
+    <header class="post-header">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="wbq">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Wbq's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
+      <h2 class="post-title">
         
+            <a class="post-title-link" href="/2019/05/24/c/" itemprop="url">
+              
+                <span itemprop="name">sfml图形库的配置</span>
+              
+            </a>
         
-          <h1 class="post-title" itemprop="name headline">数据库的储存数据结构为什么是B+树</h1>
-        
+      </h2>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-12T08:30:50+08:00">2020-02-12</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/数据库/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/02/12/study2020422/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/02/12/study2020422/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-            <span class="post-meta-divider">|</span>
-            <span class="post-meta-item-icon">
-            <i class="fa fa-eye"></i>
-             阅读次数： 
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
-            </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <h1 id="原理分析"><a href="#原理分析" class="headerlink" title="原理分析"></a>原理分析</h1><p>数据库操作的时间通常由存取磁盘的时间和CPU计算时间这两部分构成，而CPU的速度非常快，所以数据库的操作效率取决于访问磁盘的次数。<br>我们在数据库中的数据一般是放在磁盘中的，读取数据的时候，磁盘中有两个机械运动的部分，分别是盘片旋转和磁臂移动。盘片旋转就是我们市面上所提到的多少转每分钟，而磁盘移动则是在盘片旋转到指定位置以后，移动磁臂后开始进行数据的读写。那么这就存在一个定位到磁盘中的块的过程，而定位是磁盘的存取中花费时间比较大的一块，毕竟机械运动花费的时候要远远大于电子运动的时间。当大规模数据存储到磁盘中的时候，显然定位是一个非常花费时间的过程，但是我们可以通过B树进行优化，提高磁盘读取时定位的效率。</p>
-<h1 id="为什么是B树"><a href="#为什么是B树" class="headerlink" title="为什么是B树"></a>为什么是B树</h1><h2 id="B树的性质"><a href="#B树的性质" class="headerlink" title="B树的性质"></a>B树的性质</h2><p>1、定义任意非叶子结点最多只有M个儿子，且M&gt;2；<br>2、根结点的儿子数为[2, M]；<br>3、除根结点以外的非叶子结点的儿子数为[M/2, M]；<br>4、每个结点存放至少M/2-1（取上整）和至多M-1个关键字；（至少2个关键字）<br>5、非叶子结点的关键字个数=指向儿子的指针个数-1；<br>6、非叶子结点的关键字：K[1], K[2], …, K[M-1]；且K[i] &lt; K[i+1]；<br>7、非叶子结点的指针：P[1], P[2], …, P[M]；其中P[1]指向关键字小于K[1]的子树，P[M]指向关键字大于K[M-1]的子树，其它P[i]指向关键字属于(K[i-1], K[i])的子树；<br>8、所有叶子结点位于同一层；<br>根据B类树的特点，我们可以构造一个多阶的B类树，在尽量多的在结点上存储相关的信息，保证层数尽量的少，以便后面我们可以更快的找到信息，磁盘的I/O操作也少一些。而且B类树是平衡树，每个结点到叶子结点的高度都是相同，保证了每个查询是稳定的。</p>
-<p><img src="/2020/02/12/study2020422/1.png" alt=""><br><strong>35代表一个key(索引)，而小黑块代表的是这个key所指向的内容在内存中实际的存储位置，是一个指针。</strong></p>
-<p>相对于二叉检索树，B树每个内节点有多个分支。与红黑树相比，在相同的的节点的情况下，一颗B/B+树的高度远远小于红黑树的高度。而关键字总数相同的情况下B树的高度越小，磁盘I/O所花的时间越少。</p>
-<p>所以，为了提高磁盘的IO效率，B类树是我们的良好选择 </p>
-<p>而B树有一个缺点，B树在提高了IO性能的同时并没有解决元素遍历的我效率低下的问题。<br>且内部节点都有一个指向关键字具体信息的指针，占用了一部分空间</p>
-<p>为了解决这一问题，人们提出了B+树</p>
-<h2 id="B-树的性质（和B树不相同的性质）"><a href="#B-树的性质（和B树不相同的性质）" class="headerlink" title="B+树的性质（和B树不相同的性质）"></a>B+树的性质（和B树不相同的性质）</h2><p>1、非叶子节点的子树指针与关键字个数相同；<br>2、非叶子节点的子树指针p[i],指向关键字值属于[k[i],k[i+1]]的子树.(B树是开区间,也就是说B树不允许关键字重复,B+树允许重复)；<br>3、为所有叶子节点增加一个链指针；<br>4、所有关键字都在叶子节点出现(稠密索引). (且链表中的关键字恰好是有序的)；<br>5、非叶子节点相当于是叶子节点的索引(稀疏索引),叶子节点相当于是存储(关键字)数据的数据层；<br>6、更适合于文件系统；</p>
-<p><img src="/2020/02/12/study2020422/2.png" alt=""><br><strong>非叶子节点（比如5，28，65）只是一个key（索引），实际的数据存在叶子节点上（5，8，9）才是真正的数据指向真实数据的指针。</strong></p>
-<h1 id="B-树的优点"><a href="#B-树的优点" class="headerlink" title="B+树的优点"></a>B+树的优点</h1><p><strong>1.B+树的磁盘读写代价更低：</strong>B+树的内部节点并没有指向关键字具体信息的指针，占用的空间小。如果把所有同一内部节点的关键字存放在同一盘块中，那么盘块所能容纳的关键字数量也越多，一次性读入内存的需要查找的关键字也就越多，相对IO读写次数就降低了。<br><strong>2.B+树的查询效率更加稳定：</strong>由于非终结点并不是最终指向文件内容的结点，而只是叶子结点中关键字的索引。所以任何关键字的查找必须走一条从根结点到叶子结点的路。所有关键字查询的路径长度相同，导致每一个数据的查询效率相当。<br><strong>3.B+更加方便遍历和查询： </strong>由于B+树的数据都存储在叶子结点中，分支结点均为索引，方便扫库，只需要扫一遍叶子结点即可，但是B树因为其分支结点同样存储着数据，我们要找到具体的数据，需要进行一次中序遍历按序来扫，而B+树更加适合在区间查询的情况，所以通常B+树更适用于数据库索引。</p>
-<h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><p>1、<a href="http://blog.csdn.net/whoamiyang/article/details/51926985" target="_blank" rel="noopener">http://blog.csdn.net/whoamiyang/article/details/51926985</a><br>2、<a href="https://www.cnblogs.com/George1994/p/7008732.html" target="_blank" rel="noopener">https://www.cnblogs.com/George1994/p/7008732.html</a><br>3、《MySQL技术内幕 InnoDB存储引擎 姜承尧 第2版》</p>
-
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      <div>
-        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-  <div>您的支持将鼓励我继续创作！</div>
-  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-    <span>打赏</span>
-  </button>
-  <div id="QR" style="display: none;">
-
-    
-      <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/1.png" alt="wbq 微信支付">
-        <p>微信支付</p>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-05-24T17:28:30+08:00" content="2019-05-24">
+          05-24
+        </time>
       </div>
-    
 
-    
-
-    
-
-  </div>
-</div>
-
-      </div>
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/数据库/" rel="tag"># 数据库</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/11/19/study/" rel="next" title="sql语句，及腾讯云http服务学习(如何把本地的网站项目部署到服务器上)">
-                <i class="fa fa-chevron-left"></i> sql语句，及腾讯云http服务学习(如何把本地的网站项目部署到服务器上)
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/03/15/study2020422two/" rel="prev" title="MySQL的数据引擎InnoDB和MyIsam在索引的实现有什么区别。">
-                MySQL的数据引擎InnoDB和MyIsam在索引的实现有什么区别。 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+    </header>
   </article>
 
 
-
-    <div class="post-spread">
       
     </div>
+
   </div>
+  
+  
+  
+
+  
+
 
 
           </div>
           
-
-  
-    <div class="comments" id="comments">
-    </div>
-  
-
-
 
         </div>
         
@@ -588,17 +405,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -716,22 +524,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#原理分析"><span class="nav-number">1.</span> <span class="nav-text">原理分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么是B树"><span class="nav-number">2.</span> <span class="nav-text">为什么是B树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#B树的性质"><span class="nav-number">2.1.</span> <span class="nav-text">B树的性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-树的性质（和B树不相同的性质）"><span class="nav-number">2.2.</span> <span class="nav-text">B+树的性质（和B树不相同的性质）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#B-树的优点"><span class="nav-number">3.</span> <span class="nav-text">B+树的优点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文章"><span class="nav-number">4.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -908,10 +700,6 @@
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.0.4"></script>
-
-
 
   
 
