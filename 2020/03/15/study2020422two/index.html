@@ -148,19 +148,21 @@
 
 
   
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="数据库,">
 
 
-<meta name="description" content="Game developer">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Wbq&#39;s Blog">
-<meta property="og:url" content="http://wbqzsl.github.io/archives/2019/05/index.html">
+<meta name="description" content="InnoDBInnoDB使用B+树完成数据库索引的实现，但是在数据存储时数据结构中存储的是实际数据，也就是聚集索引，不支持全文检索，启动也是比较慢的。InnoDB引擎支持ACID事务的支持，提供了行级锁和外键约束，设计目标是处理大容量数据库系统，处理过程中会在内存中建立数据库缓冲区用于缓存数据和索引数据。但是如果进行select count(*) from &amp;lt;table_name&amp;gt;时，">
+<meta name="keywords" content="数据库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL的数据引擎InnoDB和MyIsam在索引的实现有什么区别。">
+<meta property="og:url" content="http://wbqzsl.github.io/2020/03/15/study2020422two/index.html">
 <meta property="og:site_name" content="Wbq&#39;s Blog">
-<meta property="og:description" content="Game developer">
+<meta property="og:description" content="InnoDBInnoDB使用B+树完成数据库索引的实现，但是在数据存储时数据结构中存储的是实际数据，也就是聚集索引，不支持全文检索，启动也是比较慢的。InnoDB引擎支持ACID事务的支持，提供了行级锁和外键约束，设计目标是处理大容量数据库系统，处理过程中会在内存中建立数据库缓冲区用于缓存数据和索引数据。但是如果进行select count(*) from &amp;lt;table_name&amp;gt;时，">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-04-22T03:36:10.543Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Wbq&#39;s Blog">
-<meta name="twitter:description" content="Game developer">
+<meta name="twitter:title" content="MySQL的数据引擎InnoDB和MyIsam在索引的实现有什么区别。">
+<meta name="twitter:description" content="InnoDBInnoDB使用B+树完成数据库索引的实现，但是在数据存储时数据结构中存储的是实际数据，也就是聚集索引，不支持全文检索，启动也是比较慢的。InnoDB引擎支持ACID事务的支持，提供了行级锁和外键约束，设计目标是处理大容量数据库系统，处理过程中会在内存中建立数据库缓冲区用于缓存数据和索引数据。但是如果进行select count(*) from &amp;lt;table_name&amp;gt;时，">
 
 
 
@@ -169,7 +171,7 @@
 
 
 
-  <link rel="canonical" href="http://wbqzsl.github.io/archives/2019/05/">
+  <link rel="canonical" href="http://wbqzsl.github.io/2020/03/15/study2020422two/">
 
 
 
@@ -178,7 +180,7 @@
     sidebar: "",
   };
 </script>
-  <title>归档 | Wbq's Blog</title>
+  <title>MySQL的数据引擎InnoDB和MyIsam在索引的实现有什么区别。 | Wbq's Blog</title>
   
 
 
@@ -225,7 +227,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <a href="https://github.com/wbqzsl?tab=repositories" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 
@@ -334,148 +336,215 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wbqzsl.github.io/2020/03/15/study2020422two/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wbq">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wbq's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">MySQL的数据引擎InnoDB和MyIsam在索引的实现有什么区别。</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-15T11:14:19+08:00">2020-03-15</time>
+            
+
+            
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 11 篇日志。 继续努力。
-      </span>
-      
 
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/15/study2020422two/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/15/study2020422two/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
-        
+          
+          
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/05/31/lesson/" itemprop="url">
-              
-                <span itemprop="name">如何使用Hexo+Github搭建起属于你的博客</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-31T20:49:22+08:00" content="2019-05-31">
-          05-31
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+        </div>
+      </header>
+    
 
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/05/24/bili/" itemprop="url">
-              
-                <span itemprop="name">up主成长之路</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-24T22:30:25+08:00" content="2019-05-24">
-          05-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/05/24/c/" itemprop="url">
-              
-                <span itemprop="name">sfml图形库的配置</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-24T17:28:30+08:00" content="2019-05-24">
-          05-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
+      
+        <h1 id="InnoDB"><a href="#InnoDB" class="headerlink" title="InnoDB"></a>InnoDB</h1><p>InnoDB使用B+树完成数据库索引的实现，但是在数据存储时数据结构中存储的是实际数据，也就是聚集索引，不支持全文检索，启动也是比较慢的。<br>InnoDB引擎支持ACID事务的支持，提供了行级锁和外键约束，设计目标是处理大容量数据库系统，处理过程中会在内存中建立数据库缓冲区用于缓存数据和索引数据。但是如果进行select count(*) from &lt;table_name&gt;时，会进行全表扫描，不会缓存扫描结果；同时在高并发的情况下，由于InnoDB引擎支持的锁的粒度较细，不会在写操作时全表锁定，有利于高并发下性能的提升。</p>
+<h1 id="MyISAM"><a href="#MyISAM" class="headerlink" title="MyISAM"></a>MyISAM</h1><p>MyIASM使用B+树完成数据库索引的实现，但是在数据存储时数据结构中存储的是实际数据的地址，被称为非聚集索引，支持全文检索<br>MyIASM不支持事务操作，不支持行级锁和外键的约束；在进行select count(*) from <table>操作时会缓存数据，不会进行全表扫描</table></p>
+<h1 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h1><p>在以下场合下，使用InnoDB是理想的选择：</p>
+<p><strong>1.更新密集的表： InnoDB存储引擎特别适合处理多重并发的更新请求。</strong><br><strong>2.事务操作效率高： InnoDB存储引擎是支持事务的标准MySQL存储引擎。</strong><br><strong>3.自动灾难恢复： 与其它存储引擎不同，InnoDB表能够自动从灾难中恢复。</strong><br><strong>4.外键约束： MySQL支持外键的存储引擎只有InnoDB。</strong><br><strong>5.支持自动增加列AUTO_INCREMENT属性。</strong></p>
+<p>*从5.7开始InnoDB存储引擎成为默认的存储引擎。</p>
+<p>一般来说，如果需要事务支持，并且有较高的并发读取频率，InnoDB是不错的选择。</p>
+<p>在以下场合下，使用MyISAM是理想的选择：</p>
+<p><strong>1. 选择密集型的表： MyISAM存储引擎在筛选大量数据时非常迅速，这是它最突出的优点。</strong><br><strong>2. 插入密集型的表： MyISAM的并发插入特性允许同时选择和插入数据。</strong></p>
+<p>MyISAM存储引擎很适合管理服务器日志数据。</p>
+
+      
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/1.png" alt="wbq 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据库/" rel="tag"># 数据库</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/02/12/study2020422/" rel="next" title="数据库的储存数据结构为什么是B+树">
+                <i class="fa fa-chevron-left"></i> 数据库的储存数据结构为什么是B+树
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/04/21/study2020421/" rel="prev" title="腾讯云ubuntu18.04的图形化界面安装，桌面的远程链接">
+                腾讯云ubuntu18.04的图形化界面安装，桌面的远程链接 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -496,8 +565,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -594,6 +672,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#InnoDB"><span class="nav-number">1.</span> <span class="nav-text">InnoDB</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MyISAM"><span class="nav-number">2.</span> <span class="nav-text">MyISAM</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用场景"><span class="nav-number">3.</span> <span class="nav-text">使用场景</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -770,6 +864,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.4"></script>
+
+
 
   
 
