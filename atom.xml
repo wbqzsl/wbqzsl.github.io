@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wbqzsl.github.io/"/>
-  <updated>2020-04-21T15:05:02.551Z</updated>
+  <updated>2020-04-22T03:30:05.404Z</updated>
   <id>http://wbqzsl.github.io/</id>
   
   <author>
@@ -15,6 +15,52 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MySQL����������InnoDB��MyIsam��������ʵ����ʲô����</title>
+    <link href="http://wbqzsl.github.io/2020/04/22/study2020422two/"/>
+    <id>http://wbqzsl.github.io/2020/04/22/study2020422two/</id>
+    <published>2020-04-22T03:14:19.000Z</published>
+    <updated>2020-04-22T03:30:05.404Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="InnoDB"><a href="#InnoDB" class="headerlink" title="InnoDB"></a>InnoDB</h1><p>InnoDBʹ��B+��������ݿ�������ʵ�֣����������ݴ洢ʱ���ݽṹ�д洢����ʵ�����ݣ�Ҳ���Ǿۼ���������֧��ȫ�ļ���������Ҳ�ǱȽ����ġ�<br>InnoDB����֧��ACID�����֧�֣��ṩ���м��������Լ�������Ŀ���Ǵ������������ݿ�ϵͳ�����������л����ڴ��н������ݿ⻺�������ڻ������ݺ��������ݡ������������select count(*) from &lt;table_name&gt;ʱ�������ȫ��ɨ�裬���Ỻ��ɨ������ͬʱ�ڸ߲���������£�����InnoDB����֧�ֵ��������Ƚ�ϸ��������д����ʱȫ�������������ڸ߲��������ܵ�������</p><h1 id="MyISAM"><a href="#MyISAM" class="headerlink" title="MyISAM"></a>MyISAM</h1><p>MyIASMʹ��B+��������ݿ�������ʵ�֣����������ݴ洢ʱ���ݽṹ�д洢����ʵ�����ݵĵ�ַ������Ϊ�Ǿۼ�������֧��ȫ�ļ���<br>MyIASM��֧�������������֧���м����������Լ�����ڽ���select count(*) from <table>����ʱ�Ỻ�����ݣ��������ȫ��ɨ��</table></p><h1 id="ʹ�o���"><a href="#ʹ�o���" class="headerlink" title="ʹ�ó���"></a>ʹ�ó���</h1><p>�����³����£�ʹ��InnoDB�������ѡ��</p><p><strong>1.�����ܼ��ı��� InnoDB�洢�����ر��ʺϴ������ز����ĸ�������</strong><br><strong>2.�������Ч�ʸߣ� InnoDB�洢������֧������ı�׼MySQL�洢���档</strong><br><strong>3.�Զ����ѻָ��� �������洢���治ͬ��InnoDB���ܹ��Զ��������лָ���</strong><br><strong>4.���Լ���� MySQL֧������Ĵ洢����ֻ��InnoDB��</strong><br><strong>5.֧���Զ�������AUTO_INCREMENT���ԡ�</strong></p><p>*��5.7��ʼInnoDB�洢�����ΪĬ�ϵĴ洢���档</p><p>һ����˵�������Ҫ����֧�֣������нϸߵĲ�����ȡƵ�ʣ�InnoDB�ǲ�����ѡ��</p><p>�����³����£�ʹ��MyISAM�������ѡ��</p><p><strong>1. ѡ���ܼ��͵ı��� MyISAM�洢������ɸѡ��������ʱ�ǳ�Ѹ�٣���������ͻ�����ŵ㡣</strong><br><strong>2. �����ܼ��͵ı��� MyISAM�Ĳ���������������ͬʱѡ��Ͳ������ݡ�</strong></p><p>MyISAM�洢������ʺϹ�����������־���ݡ�</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;InnoDB&quot;&gt;&lt;a href=&quot;#InnoDB&quot; class=&quot;headerlink&quot; title=&quot;InnoDB&quot;&gt;&lt;/a&gt;InnoDB&lt;/h1&gt;&lt;p&gt;InnoDBʹ��B+��������ݿ�������ʵ�֣����������ݴ洢ʱ���ݽṹ�д洢���
+      
+    
+    </summary>
+    
+    
+      <category term="���ݿ�" scheme="http://wbqzsl.github.io/tags/%EF%BF%BD%EF%BF%BD%EF%BF%BD%DD%BF%EF%BF%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据库的储存数据结构为什么是B+树</title>
+    <link href="http://wbqzsl.github.io/2020/04/22/study2020422/"/>
+    <id>http://wbqzsl.github.io/2020/04/22/study2020422/</id>
+    <published>2020-04-22T03:01:13.000Z</published>
+    <updated>2020-04-22T03:15:06.301Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="原理分析"><a href="#原理分析" class="headerlink" title="原理分析"></a>原理分析</h1><p>数据库操作的时间通常由存取磁盘的时间和CPU计算时间这两部分构成，而CPU的速度非常快，所以数据库的操作效率取决于访问磁盘的次数。<br>我们在数据库中的数据一般是放在磁盘中的，读取数据的时候，磁盘中有两个机械运动的部分，分别是盘片旋转和磁臂移动。盘片旋转就是我们市面上所提到的多少转每分钟，而磁盘移动则是在盘片旋转到指定位置以后，移动磁臂后开始进行数据的读写。那么这就存在一个定位到磁盘中的块的过程，而定位是磁盘的存取中花费时间比较大的一块，毕竟机械运动花费的时候要远远大于电子运动的时间。当大规模数据存储到磁盘中的时候，显然定位是一个非常花费时间的过程，但是我们可以通过B树进行优化，提高磁盘读取时定位的效率。</p><h1 id="为什么是B树"><a href="#为什么是B树" class="headerlink" title="为什么是B树"></a>为什么是B树</h1><h2 id="B树的性质"><a href="#B树的性质" class="headerlink" title="B树的性质"></a>B树的性质</h2><p>1、定义任意非叶子结点最多只有M个儿子，且M&gt;2；<br>2、根结点的儿子数为[2, M]；<br>3、除根结点以外的非叶子结点的儿子数为[M/2, M]；<br>4、每个结点存放至少M/2-1（取上整）和至多M-1个关键字；（至少2个关键字）<br>5、非叶子结点的关键字个数=指向儿子的指针个数-1；<br>6、非叶子结点的关键字：K[1], K[2], …, K[M-1]；且K[i] &lt; K[i+1]；<br>7、非叶子结点的指针：P[1], P[2], …, P[M]；其中P[1]指向关键字小于K[1]的子树，P[M]指向关键字大于K[M-1]的子树，其它P[i]指向关键字属于(K[i-1], K[i])的子树；<br>8、所有叶子结点位于同一层；<br>根据B类树的特点，我们可以构造一个多阶的B类树，在尽量多的在结点上存储相关的信息，保证层数尽量的少，以便后面我们可以更快的找到信息，磁盘的I/O操作也少一些。而且B类树是平衡树，每个结点到叶子结点的高度都是相同，保证了每个查询是稳定的。<br><img src="/2020/04/22/study2020422/1.png" alt=""><br><em>35代表一个key(索引)，而小黑块代表的是这个key所指向的内容在内存中实际的存储位置，是一个指针。</em></p><p>相对于二叉检索树，B树每个内节点有多个分支。与红黑树相比，在相同的的节点的情况下，一颗B/B+树的高度远远小于红黑树的高度。而关键字总数相同的情况下B树的高度越小，磁盘I/O所花的时间越少。</p><p>所以，为了提高磁盘的IO效率，B类树是我们的良好选择 </p><p>而B树有一个缺点，B树在提高了IO性能的同时并没有解决元素遍历的我效率低下的问题。<br>且内部节点都有一个指向关键字具体信息的指针，占用了一部分空间</p><p>所以为了解决这一问题，人们提出了B+树</p><h2 id="B-树的性质（和B树不相同的性质）"><a href="#B-树的性质（和B树不相同的性质）" class="headerlink" title="B+树的性质（和B树不相同的性质）"></a>B+树的性质（和B树不相同的性质）</h2><p>1、非叶子节点的子树指针与关键字个数相同；<br>2、非叶子节点的子树指针p[i],指向关键字值属于[k[i],k[i+1]]的子树.(B树是开区间,也就是说B树不允许关键字重复,B+树允许重复)；<br>3、为所有叶子节点增加一个链指针；<br>4、所有关键字都在叶子节点出现(稠密索引). (且链表中的关键字恰好是有序的)；<br>5、非叶子节点相当于是叶子节点的索引(稀疏索引),叶子节点相当于是存储(关键字)数据的数据层；<br>6、更适合于文件系统；</p><p><img src="/2020/04/22/study2020422/2.png" alt=""><br><strong>非叶子节点（比如5，28，65）只是一个key（索引），实际的数据存在叶子节点上（5，8，9）才是真正的数据指向真实数据的指针。</strong></p><h1 id="B-树的优点"><a href="#B-树的优点" class="headerlink" title="B+树的优点"></a>B+树的优点</h1><p><strong>1.B+树的磁盘读写代价更低：</strong>B+树的内部节点并没有指向关键字具体信息的指针，占用的空间小。如果把所有同一内部节点的关键字存放在同一盘块中，那么盘块所能容纳的关键字数量也越多，一次性读入内存的需要查找的关键字也就越多，相对IO读写次数就降低了。<br><strong>2.B+树的查询效率更加稳定：</strong>由于非终结点并不是最终指向文件内容的结点，而只是叶子结点中关键字的索引。所以任何关键字的查找必须走一条从根结点到叶子结点的路。所有关键字查询的路径长度相同，导致每一个数据的查询效率相当。<br><strong>3.B+更加方便遍历和查询： </strong>由于B+树的数据都存储在叶子结点中，分支结点均为索引，方便扫库，只需要扫一遍叶子结点即可，但是B树因为其分支结点同样存储着数据，我们要找到具体的数据，需要进行一次中序遍历按序来扫，而B+树更加适合在区间查询的情况，所以通常B+树更适用于数据库索引。</p><h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><p>1、<a href="http://blog.csdn.net/whoamiyang/article/details/51926985" target="_blank" rel="noopener">http://blog.csdn.net/whoamiyang/article/details/51926985</a><br>2、<a href="https://www.cnblogs.com/George1994/p/7008732.html" target="_blank" rel="noopener">https://www.cnblogs.com/George1994/p/7008732.html</a><br>3、《MySQL技术内幕 InnoDB存储引擎 姜承尧 第2版》</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;原理分析&quot;&gt;&lt;a href=&quot;#原理分析&quot; class=&quot;headerlink&quot; title=&quot;原理分析&quot;&gt;&lt;/a&gt;原理分析&lt;/h1&gt;&lt;p&gt;数据库操作的时间通常由存取磁盘的时间和CPU计算时间这两部分构成，而CPU的速度非常快，所以数据库的操作效率取决于访问磁盘的
+      
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="http://wbqzsl.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
   
   <entry>
     <title>腾讯云ubuntu18.04的图形化界面安装，桌面的远程链接</title>
