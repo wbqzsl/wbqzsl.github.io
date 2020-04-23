@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://49.234.121.116/"/>
-  <updated>2020-04-23T16:38:23.385Z</updated>
+  <updated>2020-04-23T16:42:01.325Z</updated>
   <id>http://49.234.121.116/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>eeee</title>
+    <link href="http://49.234.121.116/2020/04/24/eeee/"/>
+    <id>http://49.234.121.116/2020/04/24/eeee/</id>
+    <published>2020-04-23T16:42:01.000Z</published>
+    <updated>2020-04-23T16:42:01.325Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>将本地的hexo博客项目部署到腾讯云ubuntu18.04服务器上</title>
