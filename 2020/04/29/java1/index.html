@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-center-circle.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+ 
+    <script>
+      (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+      daovoice('init', {
+      app_id: "8ae73c67"
+      });
+      daovoice('update');
+    </script>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.4" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.0.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  
+  <meta name="keywords" content="Java,">
+
+
+<meta name="description" content="Java中的集合的学习，方法总结的不是很全。 有方法不会的有问题可以试着去看API，那是个好东西(:з)∠) 我还是太懒了哈哈哈哈哈哈哈哈哈哈哈哈哈">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java中集合的学习">
+<meta property="og:url" content="http://49.234.121.116/2020/04/29/java1/index.html">
+<meta property="og:site_name" content="Wbq&#39;s Blog">
+<meta property="og:description" content="Java中的集合的学习，方法总结的不是很全。 有方法不会的有问题可以试着去看API，那是个好东西(:з)∠) 我还是太懒了哈哈哈哈哈哈哈哈哈哈哈哈哈">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://49.234.121.116/2020/04/29/java1/1.png">
+<meta property="og:updated_time" content="2020-04-29T10:11:54.179Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java中集合的学习">
+<meta name="twitter:description" content="Java中的集合的学习，方法总结的不是很全。 有方法不会的有问题可以试着去看API，那是个好东西(:з)∠) 我还是太懒了哈哈哈哈哈哈哈哈哈哈哈哈哈">
+<meta name="twitter:image" content="http://49.234.121.116/2020/04/29/java1/1.png">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Wbq's Blog" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="http://49.234.121.116/2020/04/29/java1/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title>Java中集合的学习 | Wbq's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/wbqzsl?tab=repositories" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Wbq's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Hello World</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>站点地图</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>公益 404</a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://49.234.121.116/2020/04/29/java1/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wbq">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wbq's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Java中集合的学习</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-29T16:56:03+08:00">2020-04-29</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Java学习/" itemprop="url" rel="index"><span itemprop="name">Java学习</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/04/29/java1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/29/java1/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Java中的集合的学习，方法总结的不是很全。</p>
+<p>有方法不会的有问题可以试着去看API，那是个好东西<em>(:з)∠)</em></p>
+<p>我还是太懒了哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+<a id="more"></a>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=563241179&auto=1&height=66"></iframe>
+
+<h1 id="关系图"><a href="#关系图" class="headerlink" title="关系图"></a>关系图</h1><p><img src="/2020/04/29/java1/1.png" alt=""></p>
+<h1 id="Collection单列接口"><a href="#Collection单列接口" class="headerlink" title="Collection单列接口"></a>Collection单列接口</h1><h2 id="单列集合中list接口"><a href="#单列集合中list接口" class="headerlink" title="单列集合中list接口"></a>单列集合中list接口</h2><p><strong>存放有序，可重复</strong><br><strong>带索引</strong></p>
+<h3 id="ArrayList实现类"><a href="#ArrayList实现类" class="headerlink" title="ArrayList实现类"></a>ArrayList实现类</h3><p>底层实现是数组<br>查询快，增删慢</p>
+<h3 id="LinkedList实现类"><a href="#LinkedList实现类" class="headerlink" title="LinkedList实现类"></a>LinkedList实现类</h3><p>底层实现是链表<br>查询慢，增删快</p>
+<h3 id="Vector实现类"><a href="#Vector实现类" class="headerlink" title="Vector实现类"></a>Vector实现类</h3><p>暂未学习</p>
+<h3 id="代码学习"><a href="#代码学习" class="headerlink" title="代码学习"></a>代码学习</h3><figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ArrayList&lt;<span class="built_in">Integer</span>&gt; <span class="built_in">list</span>= <span class="literal">new</span> ArrayList&lt;<span class="built_in">Integer</span>&gt;();</span><br><span class="line"><span class="built_in">list</span>.add(<span class="string">"张三"</span>);</span><br><span class="line"><span class="built_in">list</span>.add(<span class="string">"张四"</span>);</span><br><span class="line"><span class="built_in">list</span>.add(<span class="string">"张五"</span>);</span><br><span class="line">        for (<span class="built_in">String</span> i:<span class="built_in">list</span>)</span><br><span class="line">       &#123;</span><br><span class="line">           System.out.print(i+<span class="string">" "</span>);</span><br><span class="line">       &#125;</span><br><span class="line"><span class="comment">//等等</span></span><br></pre></td></tr></table></figure>
+<h2 id="单列集合中set接口"><a href="#单列集合中set接口" class="headerlink" title="单列集合中set接口"></a>单列集合中set接口</h2><p><strong>存放无序，不可重复，存放时调用equals()判断</strong><br><strong>无索引</strong></p>
+<h3 id="HashSet实现类"><a href="#HashSet实现类" class="headerlink" title="HashSet实现类"></a>HashSet实现类</h3><p><strong>底层是哈希表加红黑树（JDK8）实现</strong><br><strong>存取无序</strong></p>
+<h3 id="LinkedHashSet实现类"><a href="#LinkedHashSet实现类" class="headerlink" title="LinkedHashSet实现类"></a>LinkedHashSet实现类</h3><p><strong>底层是哈希表加链表实现</strong><br><strong>存取有序</strong></p>
+<h3 id="TreeSet实现类"><a href="#TreeSet实现类" class="headerlink" title="TreeSet实现类"></a>TreeSet实现类</h3><p><strong>底层二叉树实现</strong><br><strong>排序</strong></p>
+<h3 id="代码学习-1"><a href="#代码学习-1" class="headerlink" title="代码学习"></a>代码学习</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">student</span> <span class="keyword">implements</span> <span class="title">Comparable</span>//自然排序</span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> age;</span><br><span class="line">    String name;</span><br><span class="line">    student(<span class="keyword">int</span> age,String name)&#123;</span><br><span class="line">            <span class="keyword">this</span>.age = age;</span><br><span class="line">            <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    student()&#123;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span><span class="comment">//自然排序</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span> == o) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">if</span> (o == <span class="keyword">null</span> || getClass() != o.getClass()) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        student student = (student) o;</span><br><span class="line">        <span class="keyword">return</span> age == student.age &amp;&amp;</span><br><span class="line">                Objects.equals(name, student.name);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Objects.hash(age, name);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"student&#123;"</span> +</span><br><span class="line">                <span class="string">"age="</span> + age +</span><br><span class="line">                <span class="string">", name='"</span> + name + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        student a = <span class="keyword">new</span> student(<span class="number">19</span>,<span class="string">"tom"</span>);<span class="comment">//进行调试来学习特性</span></span><br><span class="line">        student b = <span class="keyword">new</span> student(<span class="number">12</span>,<span class="string">"jerry"</span>);</span><br><span class="line">        student c = <span class="keyword">new</span> student(<span class="number">15</span>,<span class="string">"jack"</span>);</span><br><span class="line">       HashSet&lt;student&gt; set = <span class="keyword">new</span> HashSet&lt;student&gt;();</span><br><span class="line">        set.add(a);</span><br><span class="line">        set.add(b);</span><br><span class="line">        set.add(c);</span><br><span class="line">        <span class="keyword">for</span>(student n:set)</span><br><span class="line">        &#123;</span><br><span class="line">        System.out.println(n);</span><br><span class="line">        &#125;</span><br><span class="line">		<span class="comment">//------------------------------------------------</span></span><br><span class="line">       inter i = <span class="keyword">new</span> inter();<span class="comment">//定制排序method 1</span></span><br><span class="line">        TreeSet&lt;student&gt; ts = <span class="keyword">new</span> TreeSet&lt;student&gt;(<span class="keyword">new</span> Comparator&lt;student&gt;() &#123;</span><br><span class="line">            <span class="meta">@Override</span><span class="comment">//method2</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(student student, student t1)</span> </span>&#123;</span><br><span class="line">                <span class="keyword">return</span> student.age-t1.age;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        ts.add(a);</span><br><span class="line">        ts.add(b);</span><br><span class="line">        ts.add(c);</span><br><span class="line">        <span class="keyword">for</span>(student n:ts)</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.println(n);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">inter</span> <span class="keyword">implements</span> <span class="title">Comparator</span>&lt;<span class="title">student</span>&gt;//定制排序<span class="title">method2</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(student student, student t1)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> student.age-t1.age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="综合应用案例，实现随机数"><a href="#综合应用案例，实现随机数" class="headerlink" title="综合应用案例，实现随机数"></a>综合应用案例，实现随机数</h2><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*生成 [low, high) 之间不重复的若干个随机整数，排序后输出到控制台。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        l  注意区间的开闭，左闭右开。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        l  区间的左右边界由用户在控制台输入，并进行适当的有效性验证。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        l  生成的随机数需要去重复，用Set类型存储这些随机数。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        l  随机数个数不能大于区间的长度。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        l  生成的随机数排序后打印到控制台，提示使用List.sort()方法排序*/</span></span><br><span class="line"><span class="built_in">public</span> <span class="keyword">class</span> demo</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">public</span> static <span class="type">void</span> main(String[] args) &#123;</span><br><span class="line">        Random r = <span class="built_in">new</span> Random();</span><br><span class="line">        com c = <span class="built_in">new</span> com();</span><br><span class="line">        <span class="keyword">System</span>.<span class="keyword">out</span>.println("请输入下限");</span><br><span class="line">        Scanner scanner = <span class="built_in">new</span> Scanner(<span class="keyword">System</span>.<span class="keyword">in</span>);</span><br><span class="line">        HashSet&lt;<span class="type">Integer</span>&gt; <span class="keyword">set</span>= <span class="built_in">new</span> HashSet&lt;<span class="type">Integer</span>&gt;();</span><br><span class="line">        ArrayList&lt;<span class="type">Integer</span>&gt; list= <span class="built_in">new</span> ArrayList&lt;<span class="type">Integer</span>&gt;();</span><br><span class="line"></span><br><span class="line">       <span class="comment">/*List&lt;Integer&gt; list= new ArrayList&lt;Integer&gt;(new Comparator&lt;Integer&gt;() &#123;</span></span><br><span class="line"><span class="comment">                @Override//method2</span></span><br><span class="line"><span class="comment">            public int compare(Integer integer, Integer t1) &#123;</span></span><br><span class="line"><span class="comment">                return integer-t1;</span></span><br><span class="line"><span class="comment">            &#125;</span></span><br><span class="line"><span class="comment">        &#125;);此方法不可行*/</span></span><br><span class="line">        <span class="type">int</span> min = scanner.nextInt();</span><br><span class="line">        <span class="keyword">System</span>.<span class="keyword">out</span>.println("为保证随机数据的可观察性，请输入较为大的区间范围（建议100）。程序采用随机数概率进行循环判断，若数据较少请多运行几次");</span><br><span class="line">        <span class="keyword">System</span>.<span class="keyword">out</span>.println("请输入上限");// 区间的左右边界由用户在控制台输入</span><br><span class="line">        <span class="type">int</span> max = scanner.nextInt();</span><br><span class="line">        <span class="type">int</span> flag;//控制概率。</span><br><span class="line">        <span class="type">int</span> randomNum;</span><br><span class="line">        <span class="keyword">System</span>.<span class="keyword">out</span>.println("未经去重排序的随机数");</span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">            randomNum = r.nextInt((max - min)) + min;//注意区间的开闭，左闭右开。</span><br><span class="line">            <span class="keyword">System</span>.<span class="keyword">out</span>.print(randomNum+" ");</span><br><span class="line">            <span class="keyword">set</span>.<span class="keyword">add</span>(randomNum);//去重</span><br><span class="line">            flag = r.nextInt(<span class="number">250</span>);</span><br><span class="line"></span><br><span class="line">        &#125;<span class="keyword">while</span>(randomNum&gt;=min&amp;&amp;randomNum&lt;max&amp;&amp;<span class="keyword">set</span>.size()&lt;max-min&amp;&amp;flag&gt;<span class="number">10</span>);//并进行适当的有效性验证。随机数个数不能大于区间的长度。控制概率。</span><br><span class="line">        <span class="keyword">System</span>.<span class="keyword">out</span>.println("");</span><br><span class="line">        <span class="keyword">System</span>.<span class="keyword">out</span>.println("去重后：");</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i:<span class="keyword">set</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">System</span>.<span class="keyword">out</span>.print(i+" ");</span><br><span class="line">            list.<span class="keyword">add</span>(i);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">       // Collections.sort(list); //此排序方法较为简单</span><br><span class="line">        list.sort(c);</span><br><span class="line">        <span class="keyword">System</span>.<span class="keyword">out</span>.println("");</span><br><span class="line">        <span class="keyword">System</span>.<span class="keyword">out</span>.println("排序后：");</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i:list)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">System</span>.<span class="keyword">out</span>.print(i+" ");</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> com implements Comparator&lt;<span class="type">Integer</span>&gt;</span><br><span class="line">&#123;</span><br><span class="line">    @Override</span><br><span class="line">    <span class="built_in">public</span> <span class="type">int</span> compare(<span class="type">Integer</span> <span class="type">integer</span>, <span class="type">Integer</span> t1) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="type">integer</span>-t1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="双列Map接口"><a href="#双列Map接口" class="headerlink" title="双列Map接口"></a>双列Map接口</h1><p>key and values</p>
+<p>一次存取一对值</p>
+<p>key值不允许重复</p>
+<h2 id="HashMap实现类"><a href="#HashMap实现类" class="headerlink" title="HashMap实现类"></a>HashMap实现类</h2><p>底层为数组加链表组成的哈希表，增删改查都很快<br>存取无序</p>
+<h3 id="代码学习-2"><a href="#代码学习-2" class="headerlink" title="代码学习"></a>代码学习</h3><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> class Hashmap</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) &#123;</span><br><span class="line">        HashMap&lt;<span class="keyword">String</span>,<span class="keyword">String</span>&gt; <span class="built_in">map</span> = <span class="keyword">new</span> HashMap&lt;<span class="keyword">String</span>,<span class="keyword">String</span>&gt;();<span class="comment">//底层创建长度为16的数组，水平结构</span></span><br><span class="line">        <span class="comment">//竖直：链表结构</span></span><br><span class="line">        <span class="built_in">map</span>.<span class="built_in">put</span>(<span class="string">"hm001"</span>,<span class="string">"张三"</span>);</span><br><span class="line">        <span class="keyword">String</span> value = <span class="built_in">map</span>.<span class="built_in">put</span>(<span class="string">"hm002"</span>,<span class="string">"李四"</span>);<span class="comment">//put返回原位置的值</span></span><br><span class="line">        <span class="built_in">map</span>.<span class="built_in">put</span>(<span class="string">"hm003"</span>,<span class="string">"王五"</span>);</span><br><span class="line">        <span class="keyword">String</span> oldvalue = <span class="built_in">map</span>.<span class="built_in">put</span>(<span class="string">"hm003"</span>,<span class="string">"赵六"</span>);<span class="comment">//键不能重复，如重复新值替换老值//put返回老的值</span></span><br><span class="line">        System.out.<span class="built_in">println</span>(oldvalue);</span><br><span class="line">        System.out.<span class="built_in">println</span>(value);</span><br><span class="line">        System.out.<span class="built_in">println</span>(<span class="built_in">map</span>);</span><br><span class="line">        <span class="comment">//1.通过hashcode计算哈希值</span></span><br><span class="line">        <span class="comment">// 2.若储存位置有元素调用equals方法（使用键值比较）</span></span><br><span class="line">        <span class="comment">//2.1若equals方法返回true，新值替换老值，put返回老的值</span></span><br><span class="line">        <span class="comment">//2.2若哈希值计算相同，equals方法返回false，将后添加的元素放在下列</span></span><br><span class="line">        System.out.<span class="built_in">println</span>(<span class="string">"hm001"</span>.hashCode());</span><br><span class="line">        System.out.<span class="built_in">println</span>(<span class="string">"hm002"</span>.hashCode());</span><br><span class="line">        System.out.<span class="built_in">println</span>(<span class="string">"重地"</span>.hashCode());</span><br><span class="line">        System.out.<span class="built_in">println</span>(<span class="string">"通话"</span>.hashCode());</span><br><span class="line">        <span class="comment">//int size()返回Map集合键值对映射的个数</span></span><br><span class="line">        System.out.<span class="built_in">println</span>(<span class="built_in">map</span>.<span class="built_in">size</span>());</span><br><span class="line">        <span class="comment">//get()方法</span></span><br><span class="line">        <span class="keyword">String</span> value2 = <span class="built_in">map</span>.<span class="built_in">get</span>(<span class="string">"hm001"</span>);</span><br><span class="line">        <span class="comment">//containsKey()方法</span></span><br><span class="line">        <span class="keyword">boolean</span> a1 = <span class="built_in">map</span>.containsKey(<span class="string">"hm001"</span>);</span><br><span class="line">        <span class="comment">//containsValue()方法</span></span><br><span class="line">        a1 = <span class="built_in">map</span>.containsValue(<span class="string">"张三"</span>);</span><br><span class="line">        <span class="comment">//remove()方法，删一对</span></span><br><span class="line">        <span class="built_in">map</span>.<span class="built_in">remove</span>(<span class="string">"hm001"</span>);</span><br><span class="line">        <span class="built_in">map</span>.<span class="built_in">remove</span>(<span class="string">"hm001"</span>,<span class="string">"张三"</span>);</span><br><span class="line">        <span class="comment">//clear()清空所有;</span></span><br><span class="line">        <span class="built_in">map</span>.<span class="built_in">clear</span>();</span><br><span class="line">        <span class="comment">//replace方法</span></span><br><span class="line">        <span class="built_in">map</span>.replace(<span class="string">"hm002"</span>,<span class="string">"赵天"</span>);</span><br><span class="line">        <span class="comment">//默认为16个，当添加12个以上的时候，扩容至32个</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//遍历方法</span></span><br><span class="line">        <span class="comment">// keySet方法</span></span><br><span class="line">        Set&lt;<span class="keyword">String</span>&gt; keys = <span class="built_in">map</span>.keySet();</span><br><span class="line">        <span class="built_in">for</span> (<span class="keyword">String</span> key:keys)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">String</span> values = <span class="built_in">map</span>.<span class="built_in">get</span>(key);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// entrySet方法</span></span><br><span class="line">        Set&lt; Map.Entry&lt;<span class="keyword">String</span>,<span class="keyword">String</span>&gt;&gt; entrys = <span class="built_in">map</span>.entrySet();</span><br><span class="line">        Iterator&lt;Map.Entry&lt;<span class="keyword">String</span>,<span class="keyword">String</span>&gt;&gt; it = entrys.iterator();</span><br><span class="line">        <span class="built_in">while</span> (it.hasNext())</span><br><span class="line">        &#123;</span><br><span class="line">            Map.Entry&lt;<span class="keyword">String</span>,<span class="keyword">String</span>&gt; entry = it.next();</span><br><span class="line">            entry.<span class="built_in">getKey</span>();</span><br><span class="line">            entry.getValue();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//forEach方法</span></span><br><span class="line">        <span class="built_in">map</span>.forEach((<span class="keyword">String</span> a,<span class="keyword">String</span> b)-&gt;&#123;</span><br><span class="line">            System.out.<span class="built_in">println</span>(a+b);</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="comment">//values方法</span></span><br><span class="line">        Collection&lt;<span class="keyword">String</span>&gt; collec = <span class="built_in">map</span>.values();</span><br><span class="line">        collec.forEach((<span class="keyword">String</span> s)-&gt;&#123;</span><br><span class="line">            System.out.<span class="built_in">println</span>(s);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="TreeMap实现类"><a href="#TreeMap实现类" class="headerlink" title="TreeMap实现类"></a>TreeMap实现类</h2><p>排序，和TreeSet用法几乎一致。</p>
+<h2 id="HashTable实现类"><a href="#HashTable实现类" class="headerlink" title="HashTable实现类"></a>HashTable实现类</h2><h3 id="Properties实现类"><a href="#Properties实现类" class="headerlink" title="Properties实现类"></a>Properties实现类</h3><p>一般用于配置文件的读取</p>
+<p>key=values形式</p>
+<p>例如<br><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">tel</span>=<span class="number">18888886666</span></span><br><span class="line"><span class="attr">name</span>=xiaoming</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/1.png" alt="wbq 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/04/24/eeee/" rel="next" title="将本地的hexo博客项目部署到腾讯云ubuntu18.04服务器上">
+                <i class="fa fa-chevron-left"></i> 将本地的hexo博客项目部署到腾讯云ubuntu18.04服务器上
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">wbq</p>
+              <p class="site-description motion-element" itemprop="description">Game developer</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/wbqzsl" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:956963139@qq.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://weibo.com/5684887406/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" target="_blank" title="微博"><i class="fa fa-fw fa-globe"></i>微博</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://user.qzone.qq.com/956963139" target="_blank" title="QQ"><i class="fa fa-fw fa-globe"></i>QQ</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#关系图"><span class="nav-number">1.</span> <span class="nav-text">关系图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Collection单列接口"><span class="nav-number">2.</span> <span class="nav-text">Collection单列接口</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#单列集合中list接口"><span class="nav-number">2.1.</span> <span class="nav-text">单列集合中list接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ArrayList实现类"><span class="nav-number">2.1.1.</span> <span class="nav-text">ArrayList实现类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LinkedList实现类"><span class="nav-number">2.1.2.</span> <span class="nav-text">LinkedList实现类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vector实现类"><span class="nav-number">2.1.3.</span> <span class="nav-text">Vector实现类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码学习"><span class="nav-number">2.1.4.</span> <span class="nav-text">代码学习</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单列集合中set接口"><span class="nav-number">2.2.</span> <span class="nav-text">单列集合中set接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HashSet实现类"><span class="nav-number">2.2.1.</span> <span class="nav-text">HashSet实现类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LinkedHashSet实现类"><span class="nav-number">2.2.2.</span> <span class="nav-text">LinkedHashSet实现类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TreeSet实现类"><span class="nav-number">2.2.3.</span> <span class="nav-text">TreeSet实现类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码学习-1"><span class="nav-number">2.2.4.</span> <span class="nav-text">代码学习</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#综合应用案例，实现随机数"><span class="nav-number">2.3.</span> <span class="nav-text">综合应用案例，实现随机数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#双列Map接口"><span class="nav-number">3.</span> <span class="nav-text">双列Map接口</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HashMap实现类"><span class="nav-number">3.1.</span> <span class="nav-text">HashMap实现类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码学习-2"><span class="nav-number">3.1.1.</span> <span class="nav-text">代码学习</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TreeMap实现类"><span class="nav-number">3.2.</span> <span class="nav-text">TreeMap实现类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashTable实现类"><span class="nav-number">3.3.</span> <span class="nav-text">HashTable实现类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Properties实现类"><span class="nav-number">3.3.1.</span> <span class="nav-text">Properties实现类</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wbq</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+  本站访客数:<span id="busuanzi_value_site_pv"></span>
+</span>
+</div>
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.0.4</div>
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共12k字</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.4"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+ 
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'lKXPjnBDFk4WoDTS0i3Ud4Mp-gzGzoHsz',
+        appKey: 'vKdFf976iXTDkPJ9XycpySf5',
+        placeholder: '欢迎留言(づ￣ 3￣)づ',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":110,"height":220},"mobile":{"show":true},"log":false});</script></body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+
