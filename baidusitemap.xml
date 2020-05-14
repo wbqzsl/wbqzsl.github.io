@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://49.234.121.116/2020/04/21/study2020421/</loc>
-    <lastmod>2020-05-06</lastmod>
+    <loc>http://49.234.121.116/2020/05/14/study20205142/</loc>
+    <lastmod>2020-05-14</lastmod>
+  </url>  <url>
+    <loc>http://49.234.121.116/2020/05/14/study2020514/</loc>
+    <lastmod>2020-05-14</lastmod>
   </url>  <url>
     <loc>http://49.234.121.116/2020/04/29/java1/</loc>
-    <lastmod>2020-04-29</lastmod>
+    <lastmod>2020-05-14</lastmod>
+  </url>  <url>
+    <loc>http://49.234.121.116/2019/05/24/c/</loc>
+    <lastmod>2020-05-14</lastmod>
+  </url>  <url>
+    <loc>http://49.234.121.116/2020/04/21/study2020421/</loc>
+    <lastmod>2020-05-06</lastmod>
   </url>  <url>
     <loc>http://49.234.121.116/2020/04/24/eeee/</loc>
     <lastmod>2020-04-23</lastmod>
@@ -29,9 +38,6 @@
     <lastmod>2020-04-22</lastmod>
   </url>  <url>
     <loc>http://49.234.121.116/2019/05/31/lesson/</loc>
-    <lastmod>2020-04-22</lastmod>
-  </url>  <url>
-    <loc>http://49.234.121.116/2019/05/24/c/</loc>
     <lastmod>2020-04-22</lastmod>
   </url>  <url>
     <loc>http://49.234.121.116/2019/01/07/bug-clean/</loc>
