@@ -154,7 +154,7 @@
 <meta name="description" content="所谓SQL注入，就是通过把SQL命令插入到Web表单提交或输入域名或页面请求的查询字符串，最终达到欺骗服务器执行恶意的SQL命令。具体来说，它是利用现有应用程序，将（恶意的）SQL命令注入到后台数据库引擎执行的能力，它可以通过在Web表单中输入（恶意）SQL语句得到一个存在安全漏洞的网站上的数据库，而不是按照设计者意图去执行SQL语句。比如先前的很多影视网站泄露VIP会员密码大多就是通过WEB表单">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JDBC中Statement注入攻击原理分析及如何避免">
+<meta property="og:title" content="JDBC中Statement类SQL注入攻击原理分析以及如何避免">
 <meta property="og:url" content="http://49.234.121.116/2020/05/17/study2020517/index.html">
 <meta property="og:site_name" content="Wbq&#39;s Blog">
 <meta property="og:description" content="所谓SQL注入，就是通过把SQL命令插入到Web表单提交或输入域名或页面请求的查询字符串，最终达到欺骗服务器执行恶意的SQL命令。具体来说，它是利用现有应用程序，将（恶意的）SQL命令注入到后台数据库引擎执行的能力，它可以通过在Web表单中输入（恶意）SQL语句得到一个存在安全漏洞的网站上的数据库，而不是按照设计者意图去执行SQL语句。比如先前的很多影视网站泄露VIP会员密码大多就是通过WEB表单">
@@ -166,9 +166,9 @@
 <meta property="og:image" content="http://49.234.121.116/2020/05/17/study2020517/5175.png">
 <meta property="og:image" content="http://49.234.121.116/2020/05/17/study2020517/1.jpg">
 <meta property="og:image" content="http://49.234.121.116/2020/05/17/study2020517/5176.png">
-<meta property="og:updated_time" content="2020-05-17T12:46:20.950Z">
+<meta property="og:updated_time" content="2020-05-17T14:11:06.279Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JDBC中Statement注入攻击原理分析及如何避免">
+<meta name="twitter:title" content="JDBC中Statement类SQL注入攻击原理分析以及如何避免">
 <meta name="twitter:description" content="所谓SQL注入，就是通过把SQL命令插入到Web表单提交或输入域名或页面请求的查询字符串，最终达到欺骗服务器执行恶意的SQL命令。具体来说，它是利用现有应用程序，将（恶意的）SQL命令注入到后台数据库引擎执行的能力，它可以通过在Web表单中输入（恶意）SQL语句得到一个存在安全漏洞的网站上的数据库，而不是按照设计者意图去执行SQL语句。比如先前的很多影视网站泄露VIP会员密码大多就是通过WEB表单">
 <meta name="twitter:image" content="http://49.234.121.116/2020/05/17/study2020517/517.png">
 
@@ -188,7 +188,7 @@
     sidebar: "",
   };
 </script>
-  <title>JDBC中Statement注入攻击原理分析及如何避免 | Wbq's Blog</title>
+  <title>JDBC中Statement类SQL注入攻击原理分析以及如何避免 | Wbq's Blog</title>
   
 
 
@@ -371,7 +371,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JDBC中Statement注入攻击原理分析及如何避免</h1>
+          <h1 class="post-title" itemprop="name headline">JDBC中Statement类SQL注入攻击原理分析以及如何避免</h1>
         
 
         <div class="post-meta">
@@ -457,7 +457,7 @@
       
         <p>所谓SQL注入，就是通过把SQL命令插入到Web表单提交或输入域名或页面请求的查询字符串，最终达到欺骗服务器执行恶意的SQL命令。具体来说，它是利用现有应用程序，将（恶意的）SQL命令注入到后台数据库引擎执行的能力，它可以通过在Web表单中输入（恶意）SQL语句得到一个存在安全漏洞的网站上的数据库，而不是按照设计者意图去执行SQL语句。比如先前的很多影视网站泄露VIP会员密码大多就是通过WEB表单递交查询字符暴出的，这类表单特别容易受到SQL注入式攻击．</p>
 <a id="more"></a>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=405253317&auto=1&height=66"></iframe>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1388433823&auto=1&height=66"></iframe>
 
 
 <h1 id="Statement类"><a href="#Statement类" class="headerlink" title="Statement类"></a>Statement类</h1><p>我们知道。JDBC中Statement类用于将SQL语句编译并提交到数据库中。原因就出在这个类的执行机制中</p>
