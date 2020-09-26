@@ -148,21 +148,25 @@
 
 
   
-  <meta name="keywords" content="博客搭建,">
+  <meta name="keywords" content="java,">
 
 
-<meta name="description" content="又捣鼓了一天，终于，把评论功能弄起来了。（此处应有掌声）评论功能由无后台的Valine评论系统与leancloud云共同完成还顺带装上了网易云的音乐插件和访客统计功能换了个更简洁的主题欢迎吐槽，收藏（话说我是不是该搞个点赞功能）">
-<meta name="keywords" content="博客搭建">
+<meta name="description" content="Builder PatternBuilder和抽象工厂类似，也是建立一系列对象的实现。区别在于Builder建立的一对象有依赖关系而Factory的对象只是有关联。就像电脑builder，不仅需要建造还需要一些出厂内置设置，而Factory只管建造，造出来就不管了。 这是Builder Pattern的类图  builder模式 12345678910111213public class main">
+<meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第一次更新完成">
-<meta property="og:url" content="http://49.234.221.152/2019/01/06/My-blog-2-0/index.html">
+<meta property="og:title" content="Builder Pattern、Factory Pattern、Abstract Factory Pattern的区别">
+<meta property="og:url" content="http://49.234.221.152/2020/09/26/2020926study/index.html">
 <meta property="og:site_name" content="Wbq&#39;s Blog">
-<meta property="og:description" content="又捣鼓了一天，终于，把评论功能弄起来了。（此处应有掌声）评论功能由无后台的Valine评论系统与leancloud云共同完成还顺带装上了网易云的音乐插件和访客统计功能换了个更简洁的主题欢迎吐槽，收藏（话说我是不是该搞个点赞功能）">
+<meta property="og:description" content="Builder PatternBuilder和抽象工厂类似，也是建立一系列对象的实现。区别在于Builder建立的一对象有依赖关系而Factory的对象只是有关联。就像电脑builder，不仅需要建造还需要一些出厂内置设置，而Factory只管建造，造出来就不管了。 这是Builder Pattern的类图  builder模式 12345678910111213public class main">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-22T10:57:39.272Z">
+<meta property="og:image" content="http://49.234.221.152/2020/09/26/2020926study/builder.png">
+<meta property="og:image" content="http://49.234.221.152/2020/09/26/2020926study/工厂模式.png">
+<meta property="og:image" content="http://49.234.221.152/2020/09/26/2020926study/抽象工厂模式.png">
+<meta property="og:updated_time" content="2020-09-26T16:10:04.034Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第一次更新完成">
-<meta name="twitter:description" content="又捣鼓了一天，终于，把评论功能弄起来了。（此处应有掌声）评论功能由无后台的Valine评论系统与leancloud云共同完成还顺带装上了网易云的音乐插件和访客统计功能换了个更简洁的主题欢迎吐槽，收藏（话说我是不是该搞个点赞功能）">
+<meta name="twitter:title" content="Builder Pattern、Factory Pattern、Abstract Factory Pattern的区别">
+<meta name="twitter:description" content="Builder PatternBuilder和抽象工厂类似，也是建立一系列对象的实现。区别在于Builder建立的一对象有依赖关系而Factory的对象只是有关联。就像电脑builder，不仅需要建造还需要一些出厂内置设置，而Factory只管建造，造出来就不管了。 这是Builder Pattern的类图  builder模式 12345678910111213public class main">
+<meta name="twitter:image" content="http://49.234.221.152/2020/09/26/2020926study/builder.png">
 
 
 
@@ -171,7 +175,7 @@
 
 
 
-  <link rel="canonical" href="http://49.234.221.152/2019/01/06/My-blog-2-0/">
+  <link rel="canonical" href="http://49.234.221.152/2020/09/26/2020926study/">
 
 
 
@@ -180,7 +184,7 @@
     sidebar: "",
   };
 </script>
-  <title>第一次更新完成 | Wbq's Blog</title>
+  <title>Builder Pattern、Factory Pattern、Abstract Factory Pattern的区别 | Wbq's Blog</title>
   
 
 
@@ -346,7 +350,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://49.234.221.152/2019/01/06/My-blog-2-0/">
+    <link itemprop="mainEntityOfPage" href="http://49.234.221.152/2020/09/26/2020926study/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wbq">
@@ -363,7 +367,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">第一次更新完成</h1>
+          <h1 class="post-title" itemprop="name headline">Builder Pattern、Factory Pattern、Abstract Factory Pattern的区别</h1>
         
 
         <div class="post-meta">
@@ -375,7 +379,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-06T21:27:34+08:00">2019-01-06</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-09-26T23:56:05+08:00">2020-09-26</time>
             
 
             
@@ -385,24 +389,6 @@
           </span>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/博客搭建/" itemprop="url" rel="index"><span itemprop="name">博客搭建</span></a></span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -411,8 +397,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/06/My-blog-2-0/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/06/My-blog-2-0/" itemprop="commentCount"></span>
+                <a href="/2020/09/26/2020926study/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/09/26/2020926study/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -447,7 +433,19 @@
       
 
       
-        <p>又捣鼓了一天，终于，把评论功能弄起来了。（此处应有掌声）<br>评论功能由无后台的Valine评论系统与leancloud云共同完成<br>还顺带装上了网易云的音乐插件和访客统计功能<br>换了个更简洁的主题<br>欢迎吐槽，收藏（话说我是不是该搞个点赞功能）</p>
+        <h1 id="Builder-Pattern"><a href="#Builder-Pattern" class="headerlink" title="Builder Pattern"></a>Builder Pattern</h1><p>Builder和抽象工厂类似，也是建立一系列对象的实现。区别在于Builder建立的一对象有依赖关系而Factory的对象只是有关联。<br>就像电脑builder，不仅需要建造还需要一些出厂内置设置，而Factory只管建造，造出来就不管了。</p>
+<p>这是Builder Pattern的类图</p>
+<p><img src="/2020/09/26/2020926study/builder.png" alt=""></p>
+<pre><code>builder模式
+</code></pre><figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public <span class="keyword">class</span> main &#123;</span><br><span class="line">    public static void main(String<span class="literal">[]</span> args) &#123;</span><br><span class="line">        ComputerDirector director=<span class="keyword">new</span> <span class="constructor">ComputerDirector()</span>;</span><br><span class="line">        ComputerBuilder builder=<span class="keyword">new</span> <span class="constructor">MacComputerBuilder(<span class="string">"i9处理器"</span>,<span class="string">"三星"</span>)</span>;</span><br><span class="line">        director.make<span class="constructor">Computer(<span class="params">builder</span>)</span>;</span><br><span class="line">        Computer macComputer=builder.get<span class="constructor">Computer()</span>;</span><br><span class="line">        <span class="module-access"><span class="module"><span class="identifier">System</span>.</span></span>out.println(<span class="string">"mac computer:"</span>+macComputer.<span class="keyword">to</span><span class="constructor">String()</span>);</span><br><span class="line">        ComputerBuilder lenovoBuilder=<span class="keyword">new</span> <span class="constructor">LenovoComputerBuilder(<span class="string">"i7处理器"</span>,<span class="string">"金士顿"</span>)</span>;</span><br><span class="line">        director.make<span class="constructor">Computer(<span class="params">lenovoBuilder</span>)</span>;</span><br><span class="line">        Computer lenovoComputer=lenovoBuilder.get<span class="constructor">Computer()</span>;</span><br><span class="line">        <span class="module-access"><span class="module"><span class="identifier">System</span>.</span></span>out.println(<span class="string">"lenovo computer:"</span>+lenovoComputer.<span class="keyword">to</span><span class="constructor">String()</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Factory-Pattern"><a href="#Factory-Pattern" class="headerlink" title="Factory Pattern"></a>Factory Pattern</h1><p>抽象工厂不仅仅负责一个产品的生成，而是创造一类产品，如代码中的抽象快速车工厂，既可以生成小快车，也可以生成大快车，但他们都是快车<br>而工厂模式只是生产大车和小车，大车就是大车工厂，小车就是小车工厂。</p>
+<p>这分别是Factory Pattern和Abstract Factory Pattern的类图</p>
+<p><img src="/2020/09/26/2020926study/工厂模式.png" alt=""></p>
+<pre><code>工厂模式
+</code></pre><figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">main</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> void main(<span class="keyword">String</span>[] args) &#123;</span><br><span class="line">        CarFactory smallCarFactory = <span class="keyword">new</span> <span class="type">SmallCarFactory</span>();</span><br><span class="line">        smallCarFactory.create().beProducted();</span><br><span class="line">        CarFactory bigCarFactory = <span class="keyword">new</span> <span class="type">bigCarFactory</span>();</span><br><span class="line">        bigCarFactory.create().beProducted();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="Abstract-Factory-Pattern"><a href="#Abstract-Factory-Pattern" class="headerlink" title="Abstract Factory Pattern"></a>Abstract Factory Pattern</h1><p><img src="/2020/09/26/2020926study/抽象工厂模式.png" alt=""></p>
+<pre><code>抽象工厂模式
+</code></pre><figure class="highlight pony"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">main</span> &#123;</span></span><br><span class="line">    public static void main(<span class="type">String</span>[] args) &#123;</span><br><span class="line">        <span class="type">CarFactory</span> <span class="type">FastCarFactory</span> = <span class="function"><span class="keyword">new</span> <span class="title">FastCarFactory</span>();</span></span><br><span class="line"><span class="function">        <span class="title">CarFactory</span> <span class="title">SafeCarFactory</span> = <span class="title">new</span> <span class="title">SafeCarFactory</span>();</span></span><br><span class="line"><span class="function">        <span class="title">BigFastCar</span> <span class="title">bigFastCar</span> = (<span class="type">BigFastCar</span>) <span class="title">FastCarFactory</span>.<span class="title">BigCarCreate</span>();</span></span><br><span class="line"><span class="function">        <span class="title">SmallFastCar</span> <span class="title">smallFastCar</span> = (<span class="type">SmallFastCar</span>) <span class="title">FastCarFactory</span>.<span class="title">SmallCarCreate</span>();</span></span><br><span class="line"><span class="function">        <span class="title">bigFastCar</span>.<span class="title">SpeedPerformance</span>();</span></span><br><span class="line"><span class="function">        <span class="title">bigFastCar</span>.<span class="title">strength</span>();</span></span><br><span class="line"><span class="function">        <span class="title">smallFastCar</span>.<span class="title">SpeedPerformance</span>();</span></span><br><span class="line"><span class="function">        <span class="title">smallFastCar</span>.<span class="title">light</span>();</span></span><br><span class="line"><span class="function">    &#125;</span></span><br><span class="line"><span class="function">&#125;</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -492,7 +490,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/博客搭建/" rel="tag"># 博客搭建</a>
+            <a href="/tags/java/" rel="tag"># java</a>
           
         </div>
       
@@ -505,8 +503,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/05/world/" rel="next" title="world">
-                <i class="fa fa-chevron-left"></i> world
+              <a href="/2020/09/19/study2020919/" rel="next" title="懒汉模式如何做到线程安全及Mybatis学习">
+                <i class="fa fa-chevron-left"></i> 懒汉模式如何做到线程安全及Mybatis学习
               </a>
             
           </div>
@@ -514,10 +512,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/07/bug-clean/" rel="prev" title="bug大清理，第二次更新">
-                bug大清理，第二次更新 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -607,8 +601,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -736,6 +739,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Builder-Pattern"><span class="nav-number">1.</span> <span class="nav-text">Builder Pattern</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Factory-Pattern"><span class="nav-number">2.</span> <span class="nav-text">Factory Pattern</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Abstract-Factory-Pattern"><span class="nav-number">3.</span> <span class="nav-text">Abstract Factory Pattern</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
